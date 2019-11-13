@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding: 0;
+    border:0;
+}
+
+ol,ul,li{
+    list-style:none;
+}
+
+a,
+a:link,
+a:hover,
+a:active,
+a:visited{
+    text-decoration: none;
+    color:#fff;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
