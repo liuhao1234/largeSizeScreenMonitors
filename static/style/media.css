@@ -2,9 +2,13 @@
     .result-info{
         width: 200px;
     }
+    .business-content .item-wrap01 .text-data{
+        width:160px;
+    }
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1660px) {
+    
     .result-info{
         width: 280px;
     }
