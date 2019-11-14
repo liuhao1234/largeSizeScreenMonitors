@@ -7,7 +7,9 @@
 ol,ul,li{
     list-style:none;
 }
-
+b,strong{
+    font-weight: normal;
+}
 a,
 a:link,
 a:hover,

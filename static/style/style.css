@@ -4,9 +4,10 @@ html,body{
 }
 
 .container{
+    min-width: 1280px;
     height: 100%;
     overflow: auto;
-    background: #070f29;
+    background: #0c1843;
 }
 /* 公用样式 */
 .clear-fixed-after:after{
@@ -79,29 +80,26 @@ html,body{
 }
 /* 元素边框样式 */
 .item-cell{
-    width:500px;
-    height:500px;
     position: relative;
-    background: #0d1d4d;
 }
 .item-cell .title{
-    width:220px;
-    height:50px;
+    width: 220px;
+    height: 36px;
     background: url(../images/item-title-bg.png) no-repeat center center;
     background-size: contain;
     text-align: center;
-    line-height: 52px;
+    line-height: 38px;
     margin: 0 auto;
     position: relative;
-    top: -10px;
+    top: -4px;
 }
 .item-cell .title span{
     font-size:15px;
     color:#fff;
     text-align: center;
 }
-.item-cell.item-type02{
-    background: none;
+.item-cell.border-type01{
+    background: #0d1d4d;
 }
 .item-border{
     position: absolute;
@@ -110,7 +108,7 @@ html,body{
     width:100%;
     height:100%;
 }
-.item-border.border-type01 i:nth-child(1){
+.border-type01 .item-border i:nth-child(1){
     position: absolute;
     top: -6px;
     left: -6px;
@@ -119,7 +117,7 @@ html,body{
     background: url(../images/border-type01a.png) no-repeat center center;
     background-size:contain;
 }
-.item-border.border-type01 i:nth-child(2){
+.border-type01 .item-border i:nth-child(2){
     position: absolute;
     top:0;
     right:0;
@@ -128,7 +126,7 @@ html,body{
     background: url(../images/border-type01b.png) no-repeat center center;
     background-size:contain;
 }
-.item-border.border-type01 i:nth-child(3){
+.border-type01 .item-border i:nth-child(3){
     position: absolute;
     bottom:0;
     right:0;
@@ -137,7 +135,7 @@ html,body{
     background: url(../images/border-type01c.png) no-repeat center center;
     background-size:contain;
 }
-.item-border.border-type01 i:nth-child(4){
+.border-type01 .item-border i:nth-child(4){
     position: absolute;
     bottom: -7px;
     left: -5px;
@@ -146,7 +144,7 @@ html,body{
     background: url(../images/border-type01d.png) no-repeat center center;
     background-size:contain;
 }
-.item-border.border-type01 i:nth-child(5){
+.border-type01 .item-border i:nth-child(5){
     position: absolute;
     top:0;
     left:0;
@@ -154,7 +152,7 @@ html,body{
     height:1px;
     background: #2773e6;
 }
-.item-border.border-type01 i:nth-child(6){
+.border-type01 .item-border i:nth-child(6){
     position: absolute;
     top:0;
     right:0;
@@ -162,7 +160,7 @@ html,body{
     height:calc(100% - 22px);
     background: #2773e6;
 }
-.item-border.border-type01 i:nth-child(7){
+.border-type01 .item-border i:nth-child(7){
     position: absolute;
     bottom:0;
     left:0;
@@ -170,7 +168,7 @@ html,body{
     height:1px;
     background: #2773e6;
 }
-.item-border.border-type01 i:nth-child(8){
+.border-type01 .item-border i:nth-child(8){
     position: absolute;
     top:33px;
     left:0;
@@ -179,7 +177,7 @@ html,body{
     background: #2773e6;
 }
 
-.item-border.border-type02 i:nth-child(1){
+.border-type02 .item-border i:nth-child(1){
     position: absolute;
     top: 0;
     left: 0;
@@ -188,7 +186,7 @@ html,body{
     background: url(../images/border-type02a.png) no-repeat center center;
     background-size:contain;
 }
-.item-border.border-type02 i:nth-child(2){
+.border-type02 .item-border i:nth-child(2){
     position: absolute;
     top:0;
     right:0;
@@ -197,7 +195,7 @@ html,body{
     background: url(../images/border-type02b.png) no-repeat center center;
     background-size:contain;
 }
-.item-border.border-type02 i:nth-child(3){
+.border-type02 .item-border i:nth-child(3){
     position: absolute;
     bottom:0;
     right:0;
@@ -206,7 +204,7 @@ html,body{
     background: url(../images/border-type02c.png) no-repeat center center;
     background-size:contain;
 }
-.item-border.border-type02 i:nth-child(4){
+.border-type02 .item-border i:nth-child(4){
     position: absolute;
     bottom: 0;
     left: 0;
@@ -215,7 +213,7 @@ html,body{
     background: url(../images/border-type02d.png) no-repeat center center;
     background-size:contain;
 }
-.item-border.border-type02 i:nth-child(5){
+.border-type02 .item-border i:nth-child(5){
     position: absolute;
     top:0;
     left: 18px;
@@ -223,7 +221,7 @@ html,body{
     height:1px;
     background: #2773e6;
 }
-.item-border.border-type02 i:nth-child(6){
+.border-type02 .item-border i:nth-child(6){
     position: absolute;
     top: 11px;
     right: 0;
@@ -231,7 +229,7 @@ html,body{
     height: calc(100% - 23px);
     background: #2773e6;
 }
-.item-border.border-type02 i:nth-child(7){
+.border-type02 .item-border i:nth-child(7){
     position: absolute;
     bottom:0;
     left: 41px;
@@ -239,7 +237,7 @@ html,body{
     height:1px;
     background: #2773e6;
 }
-.item-border.border-type02 i:nth-child(8){
+.border-type02 .item-border i:nth-child(8){
     position: absolute;
     top: 15px;
     left: 0;
@@ -247,29 +245,310 @@ html,body{
     height: calc(100% - 29px);
     background: #2773e6;
 }
+.page-content{
+    margin-top:10px;
+    height:calc(100vh - 80px)
+}
 .item-wrap{
     float:left;
 }
 .item-wrap .item-inner{
     padding:10px;
+    height:calc(100% - 20px)
 }
-/* 首页 */
-.page-content{
-    border-top:1px solid transparent;
-    margin-top: 10px;
+.item-wrap .item-inner .item-cell{
+    height:100%;
 }
-.item-wrap01{
-    float: left;
-}
-.item-wrap01 .item-cell{
-    width: 300px;
-    height: calc(100vh - 100px);
-}
-.item-wrap01 .item-cell .item-content{
-    height: calc(100% - 51px);
-    background: #f00;
+.item-wrap .item-cell .item-content{
+    height:calc(100% - 36px);
     position: relative;
     z-index: 1;
+}
+.item-wrap .item-cell.border-type02 .item-content{
+    height:100%;
+    position: relative;
+    z-index: 1;
+}
+.img-number-show{
+    display: inline-block;
+    margin: 0 10px;
+    padding-left: 42px;
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-size:36px;
+}
+.img-number-show.icon-airplane{
+    background-image: url(../images/icon-airplane.png);
+}
+.img-number-show.icon-car{
+    background-image: url(../images/icon-car.png);
+}
+.img-number-show.icon-box{
+    background-image: url(../images/icon-box.png);
+}
+.img-number-show b{
+    color:#9bdef0;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.img-number-show strong{
+    color:#00ffff;
+    font-size: 20px;
+}
+.img-number-show strong small{
+    font-size: 14px;
+}
+/* 首页 */
+.business-content{
+
+}
+.business-content .item-wrap{
+    float:left;
+}
+.business-content .item-wrap01{
+    width: calc(100% - 500px);
+    height: 100%;
+}
+.business-content .item-wrap01 .item-content{
+    height: 100%;
+    background: url(../images/map-bg.png) no-repeat center center;
+    background-size: 100%;
+}
+.business-content .item-wrap01 .transport-data{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9;
+}
+.business-content .item-wrap01 .map-data{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.business-content .item-wrap01 .text-data{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 140px;
+    height: 160px;
+    overflow: hidden;
+    z-index: 9;
+}
+.business-content .item-wrap01 .text-data dl{
+    white-space: nowrap;
+    color:#9bdef0;
+    text-align: right;
+    position: relative;
+}
+.business-content .item-wrap01 .text-data dl dt{
+    margin: 10px 0;
+}
+.business-content .item-wrap01 .text-data dl dd{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 10px 0;
+}
+.business-content .item-wrap01 .text-data dl dd.unusual{
+    color:#ff4076;
+}
+.business-content .item-wrap01 .item-list-data{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 9;
+}
+.item-list-data .item-cell{
+    float: left;
+    margin: 0 5px;
+}
+.item-list-data .list-data{
+    width:120px;
+    height: 70px;
+    position: relative;
+    z-index: 1;
+}
+.item-list-data .list-data span{
+    color:#9bdef0;
+    display: block;
+    font-size: 13px;
+    margin-left: 20px;
+    margin-bottom: 3px;
+    padding-top: 12px;
+}
+.item-list-data .list-data b{
+    color:#00ffff;
+    font-size: 18px;
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+}
+.business-content .item-wrap01 .result-data{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 9;
+}
+.result-info{
+    width: 300px;
+    height: 70px;
+    margin: 0 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.result-info span{
+    color:#00ffff;
+    line-height: 70px;
+    font-size: 21px;
+    white-space: nowrap;
+    position: relative;
+}
+
+.business-content .item-wrap02{
+    width: 500px;
+    height: 260px;
+}
+.business-content .item-wrap02 ul.site_build_condition{
+    margin-top: 10px;
+}
+.business-content .item-wrap02 ul.site_build_condition li{
+    float: left;
+    width: 33.33333333%;
+    text-align: center;
+}
+.business-content .item-wrap02 ul.site_build_condition li div{
+    height: 110px;
+    line-height: 110px;
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: auto 100%;
+}
+.business-content .item-wrap02 ul.site_build_condition li:nth-child(1) div{
+    background-image: url(../images/icon-pie01.png);
+}
+.business-content .item-wrap02 ul.site_build_condition li:nth-child(2) div{
+    background-image: url(../images/icon-pie02.png);
+}
+.business-content .item-wrap02 ul.site_build_condition li:nth-child(3) div{
+    background-image: url(../images/icon-pie03.png);
+}
+.business-content .item-wrap02 ul.site_build_condition li div span{
+    font-size: 24px;
+}
+.business-content .item-wrap02 ul.site_build_condition li:nth-child(1) div span{
+    color:#00ffff
+}
+.business-content .item-wrap02 ul.site_build_condition li:nth-child(2) div span{
+    color:#ff9745
+}
+.business-content .item-wrap02 ul.site_build_condition li:nth-child(3) div span{
+    color:#36c16e
+}
+.business-content .item-wrap02 ul.site_build_condition li b{
+    color: #65c6e7;
+    font-size: 14px;
+    margin-top: 5px;
+    display: inline-block;
+}
+.business-content .item-wrap02 .build_process{
+    margin: 0 20px;
+    margin-top: 30px;
+}
+.business-content .item-wrap02 .build_process span{
+    color: #65c6e7;
+    font-size: 14px;
+    vertical-align: middle;
+}
+.business-content .item-wrap02 .build_process strong{
+    color: #65c6e7;
+    font-size: 14px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 5px;
+}
+.business-content .item-wrap02 .build_process small{
+    display: inline-block;
+    width: calc(100% - 135px);
+    background: #08477a;
+    height: 14px;
+    margin-left: 5px;
+    vertical-align: middle;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.business-content .item-wrap02 .build_process small b{
+    width:60%;
+    height: 100%;
+    display: block;
+    background: url(../images/icon-process-line.png) repeat-y left;
+    position: relative;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.business-content .item-wrap02 .build_process small b i{
+    position: absolute;
+    top: 0;
+    right: -6px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icon-light.png) no-repeat right center;
+    background-size: contain;
+}
+.business-content .item-wrap03{
+    width: 500px;
+    height: calc(100% - 260px);
+}
+.learn_condition .item-cell{
+    float: left;
+    margin: 5px 10px;
+}
+.learn_condition .list-data{
+    width:220px;
+    height: 70px;
+    position: relative;
+    z-index: 1;
+}
+.learn_condition .list-data span{
+    color:#9bdef0;
+    display: block;
+    font-size: 13px;
+    margin-left: 20px;
+    margin-bottom: 3px;
+    padding-top: 12px;
+}
+.learn_condition .list-data b{
+    color:#00ffff;
+    font-size: 18px;
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+}
+.learn_condition .list-data b small{
+    font-size: 12px;
+}
+.learn_rank{
+    height: calc(100% - 180px);
+    margin-top: 10px;
+}
+.learn_rank span{
+    color: #00ffff;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.learn_rank .rank_chart{
+    height: calc(100% - 10px);
 }
 
 

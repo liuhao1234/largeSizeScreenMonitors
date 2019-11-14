@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="../static/style/normalize.css">
     <link rel="stylesheet" href="../static/style/reset.css">
     <link rel="stylesheet" href="../static/style/style.css">
+    <link rel="stylesheet" href="../static/style/media.css">
 </head>
 <body>
     <div class="container">
         <div class="header clear-fixed-after">
             <div class="title clear-fixed-after">
-                <span>宣威市电商实时销售数据</span>
+                <span>瓦房店农村电商大数据平台</span>
                 <i></i>
             </div>
             <div class="nav">
@@ -27,14 +28,148 @@
                 <span>2019.11.11 10:52:26</span>
             </div>
         </div>
-        <div class="page-content clear-fixed-after">
+        <!-- 电商页面 -->
+        <div class="page-content business-content clear-fixed-after">
             <div class="item-wrap item-wrap01">
                 <div class="item-inner">
-                    <div class="item-cell item-type01">
+                    <div class="item-cell border-type01">
+                        <div class="item-border">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="map-data" id="logisticsMapChart">
+                                
+                            </div>
+                            <div class="text-data" id="myScroll">
+                                <dl>
+                                    <!-- <dt>10:50</dt>
+                                    <dd>宛水街道学苑社区服务点成交一单 无异常</dd>
+                                    <dd class="unusual">虹桥街道虹桥新街服务点成交一单 无异常</dd>
+                                    <dt>10:25</dt>
+                                    <dd></dd>
+                                    <dt>10:37</dt>
+                                    <dd class="unusual">龙潭镇德基村服务点成交一单 无异常</dd>
+                                    <dd>板桥街道龙津社区服务点成交一单 无异常</dd>
+                                    <dt>10:42</dt>
+                                    <dd>东山镇服务站成交一单 无异常</dd>
+                                    <dd class="unusual">板桥街道龙津社区服务点成交一单 异常</dd> -->
+                                </dl>
+                            </div>
+                            <div class="transport-data">
+                                <span class="img-number-show icon-airplane">
+                                    <b>上行包裹</b><br/>
+                                    <strong>3,897<small>件</small></strong>
+                                </span>
+                                <span class="img-number-show icon-car">
+                                    <b>下行包裹</b><br/>
+                                    <strong>35,786<small>件</small></strong>
+                                </span>
+                                <span class="img-number-show icon-box">
+                                    <b>站点总数</b><br/>
+                                    <strong>208<small>个</small></strong>
+                                </span>
+                            </div>
+                            <div class="item-list-data clear-fixed-after">
+                                <div class="item-cell border-type02">
+                                    <div class="item-border">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <div class="list-data">
+                                        <span>新证树</span>
+                                        <b>1,438人</b>
+                                    </div>
+                                </div>
+                                <div class="item-cell border-type02">
+                                    <div class="item-border">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <div class="list-data">
+                                        <span>新证树</span>
+                                        <b>1,438人</b>
+                                    </div>
+                                </div>
+                                <div class="item-cell border-type02">
+                                    <div class="item-border">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <div class="list-data">
+                                        <span>新证树</span>
+                                        <b>1,438人</b>
+                                    </div>
+                                </div>
+                                <div class="item-cell border-type02">
+                                    <div class="item-border">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <div class="list-data">
+                                        <span>新证树</span>
+                                        <b>1,438人</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result-data">
+                                <div class="item-cell border-type02">
+                                    <div class="item-border">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <div class="result-info" id="resultInfo">
+                                        <span>累计帮扶贫困户1816人、为贫困户增收359万元、节支81万元。</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-wrap item-wrap02">
+                <div class="item-inner">
+                    <div class="item-cell border-type01">
                         <div class="title">
-                            <span>销售额店铺排名</span>
+                            <span>站点建设情况</span>
                         </div>
-                        <div class="item-border border-type01">
+                        <div class="item-border">
                             <i></i>
                             <i></i>
                             <i></i>
@@ -44,7 +179,126 @@
                             <i></i>
                             <i></i>
                         </div>
-                        <div class="item-content"></div>
+                        <div class="item-content">
+                            <ul class="site_build_condition clear-fixed-after">
+                                <li>
+                                    <div>
+                                        <span>56%</span>
+                                    </div>
+                                    <b>扶贫村覆盖率</b>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span>100%</span>
+                                    </div>
+                                    <b>乡镇覆盖率</b>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span>30岁</span>
+                                    </div>
+                                    <b>站点平均年龄</b>
+                                </li>
+                            </ul>
+                            <div class="build_process">
+                                <span>站点建设进度</span>
+                                <small>
+                                    <b><i></i></b>
+                                </small>
+                                <strong>60%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-wrap item-wrap03">
+                <div class="item-inner">
+                    <div class="item-cell border-type01">
+                        <div class="title">
+                            <span>学院培训情况</span>
+                        </div>
+                        <div class="item-border">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                        <div class="item-content">
+                            <div class="learn_condition clear-fixed-after">
+                                <div class="item-cell border-type02">
+                                    <div class="item-border">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <div class="list-data">
+                                        <span>累计培训</span>
+                                        <b>9,489<small>人次</small></b>
+                                    </div>
+                                </div>
+                                <div class="item-cell border-type02">
+                                    <div class="item-border">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <div class="list-data">
+                                        <span>实操培训</span>
+                                        <b>5,878<small>人次</small></b>
+                                    </div>
+                                </div>
+                                <div class="item-cell border-type02">
+                                    <div class="item-border">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <div class="list-data">
+                                        <span>其实贫困户</span>
+                                        <b>326<small>人次</small></b>
+                                    </div>
+                                </div>
+                                <div class="item-cell border-type02">
+                                    <div class="item-border">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                    <div class="list-data">
+                                        <span>学员好评数</span>
+                                        <b>98,3<small>%</small></b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="learn_rank">
+                                <span>乡镇培训排名</span>
+                                <div class="rank_chart" id="learnRankChart"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,6 +320,11 @@
         </div> -->
     </div>
     <script src="../static/script/jquery.min.js"></script>
+    <script src="../static/lib/echarts/echarts.js"></script>
+    <script src="../static/lib/echarts/china.js"></script>
+    <script src="../static/lib/scroll/scroll.js"></script>
+    <script src="../static/script/data.js"></script>
+    <script src="../static/script/plugin.js"></script>
     <script src="../static/script/base.js"></script>
 </body>
 </html>
