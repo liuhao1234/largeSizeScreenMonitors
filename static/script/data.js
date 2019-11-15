@@ -330,3 +330,45 @@ var mapSeries = [];
     });
 });
 // 以上是地图迁徙图数据
+
+var gdpPieData = [{
+    name:"第一产业",
+    value:43
+},{
+    name:"第二产业",
+    value:96
+},{
+    name:"第三产业",
+    value:71
+}]
+
+var gdpLineData = [{
+    name:"2013",
+    value:1280
+},{
+    name:"2014",
+    value:966
+},{
+    name:"2015",
+    value:2890
+},{
+    name:"2016",
+    value:1692.85
+},{
+    name:"2017",
+    value:2789.88
+},{
+    name:"2018",
+    value:1660.55
+},{
+    name:"2019",
+    value:3211.11
+}]
+
+var opulationRatioData = [{
+    name:"男",
+    value:938374
+},{
+    name:"女",
+    value:969837
+}]

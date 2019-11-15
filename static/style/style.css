@@ -389,7 +389,7 @@ html,body{
 .business-content .item-wrap01 .result-data{
     position: absolute;
     bottom: 10px;
-    right: 10px;
+    right: 15px;
     z-index: 9;
 }
 .result-info{
@@ -552,7 +552,176 @@ html,body{
     height: calc(100% - 10px);
 }
 
-
+/* 政府数据页面样式开始 */
+.info_card .item-cell{
+    float: left;
+    margin: 5px 10px;
+}
+.info_card .list-data{
+    width:220px;
+    height: 70px;
+    position: relative;
+    z-index: 1;
+}
+.info_card .list-data span{
+    color:#9bdef0;
+    display: block;
+    font-size: 13px;
+    margin-left: 20px;
+    margin-bottom: 3px;
+    padding-top: 12px;
+}
+.info_card .list-data b{
+    color:#00ffff;
+    font-size: 26px;
+    display: block;
+    text-align: right;
+    margin-right: 30px;
+    margin-top: -5px;
+}
+.info_card .list-data b small{
+    font-size: 12px;
+}
+.government-content .item-wrap{
+    float: initial;
+}
+.government-content .item-wrap-left{
+    width: 400px;
+    float: left;
+}
+.government-content .item-wrap-center{
+    float: left;
+    width: calc(100% - 800px);
+}
+.government-content .item-wrap-right{
+    width: 400px;
+    float: left;
+}
+.government-content .item-wrap-left .item-wrap,
+.government-content .item-wrap-right .item-wrap{
+    height: calc((100vh - 90px) / 3);
+}
+.government-content .item-wrap01{
+    
+}
+.government-content .item-wrap01 .chart-wrap{
+    height: calc(100% - 40px);
+    position: relative;
+}
+.government-content .item-wrap01 .chart-wrap>span{
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    text-align: center;
+    width: 100%;
+}
+.government-content .item-wrap01 .chart-wrap span b{
+    color: #00ffff;
+    display: block;
+    font-size: 22px;
+}
+.government-content .item-wrap01 .chart-wrap span small{
+    color: #9bdef0;
+    font-size: 14px;
+}
+.government-content .item-wrap01 .gdp-pie-chart{
+    height: 100%;
+}
+.government-content .item-wrap01 ul{
+    margin: 0 50px;
+    margin-top: 10px;
+}
+.government-content .item-wrap01 ul li{
+    float: left;
+    width: 33.33333333%;
+    text-align: center;
+    color: #9bdef0;
+    font-size: 14px;
+}
+.government-content .item-wrap02{
+    margin-top: 5px;
+}
+.economic_info{
+    height: 100%;
+}
+.economic_info .item-cell{
+    margin: 10px;
+    height: calc((100% - 50px) / 2)!important;
+}
+.economic_info .list-data{
+    width:170px;
+    height: 100%;
+}
+.economic_info .list-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.economic_info .list-data .list-data-inner{
+    width: 100%;
+    margin-top: -12px;
+}
+.economic_info .list-data b{
+    font-size: 18px;
+    margin-top: 5px;
+}
+.government-content .item-wrap03{
+    margin-top: 5px;
+}
+.government-content .item-wrap03 .item-content>span{
+    position: absolute;
+    top:5px;
+    right: 10px;
+    color: #9bdef0;
+}
+.government-content .item-wrap03 .item-content span small{
+    color: #00ffff;
+    font-size: 18px;
+}
+.government-content .item-wrap03 .gdp-line-chart{
+    height: 100%;
+}
+.government-content .item-wrap04{
+    height: calc((100vh - 90px) / 3 * 2 + 5px);
+}
+.government-content .item-wrap04 .video{
+    width: calc(100% - 4px);
+    padding: 2px;
+    height: 100%;
+}
+.government-content .item-wrap05{
+    margin-top: 5px;
+    height: calc((100vh - 90px) / 3);
+}
+.government-content .item-wrap05 .government-text{
+    height: calc(100% - 20px);
+    margin: 10px;
+    overflow: auto;
+}
+.government-content .item-wrap05 .government-text p{
+    color: #9bdef0;
+    font-size: 14px;
+    text-indent: 2em;
+    line-height: 24px;
+}
+.government-content .item-wrap04 .item-content,
+.government-content .item-wrap05 .item-content{
+    height: 100%;
+}
+.government-content .item-wrap06{}
+.government-content .item-wrap07{
+    margin-top: 5px;
+}
+.government-content .item-wrap07 .poor-bar-chart{
+    height: 100%;
+}
+.government-content .item-wrap08{
+    margin-top: 5px;
+}
+.government-content .item-wrap08 .population-ratio{
+    height: 100%;
+}
+/* 政府数据页面样式结束 */
 
 
 
