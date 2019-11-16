@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>电商数据</title>
+    <link rel="stylesheet" href="../static/style/normalize.css">
+    <link rel="stylesheet" href="../static/lib/jscrollpane/style/jquery.jscrollpane.css">
+    <link rel="stylesheet" href="../static/style/reset.css">
+    <link rel="stylesheet" href="../static/style/style.css">
+    <link rel="stylesheet" href="../static/style/media.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header clear-fixed-after">
+            <div class="title clear-fixed-after">
+                <span>瓦房店农村电商大数据平台</span>
+                <i></i>
+            </div>
+            <div class="nav">
+                <ul class="clear-fixed-after">
+                    <li class="active"><a href="javascript:void(0)">物流数据</a></li>
+                    <li><a href="javascript:void(0)">电商数据</a></li>
+                    <li><a href="javascript:void(0)">政府数据</a></li>
+                </ul>
+            </div>
+            <div class="timer">
+                <span>2019.11.11 10:52:26</span>
+            </div>
+        </div>
+        <div class="page-content ebusiness-content clear-fixed-after">
+            <div class="item-wrap-left">
+                <div class="item-wrap item-wrap01">
+                    <div class="item-inner">
+                        <div class="item-cell border-type01">
+                            <div class="title">
+                                <span>销售额店铺排名</span>
+                            </div>
+                            <div class="item-border">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+                            <div class="item-content">
+                                <div class="sell-rank" id="sellRank">
+                                    <ul>
+                                        <!-- <li><i>1</i><span>宣威阳光食品宣威阳光食品宣威阳光食品宣威阳光食品宣威阳光食品</span><b>45323</b></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-wrap-center">
+                <div class="item-wrap item-wrap02">
+                    <div class="item-inner">
+                        <div class="item-cell border-type01">
+                            <div class="item-border">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+                            <div class="item-content">
+                                <div class="sell-data-show clear-fixed-after">
+                                    <span>
+                                        <strong>销售总额</strong>
+                                        <b>58,985,623<small>件</small></b>
+                                    </span>
+                                    <span>
+                                        <strong>同比增长</strong>
+                                        <b><i>+</i>46<small>%</small></b>
+                                    </span>
+                                </div>
+                                <div class="sell-map-chart" id="sellMapChart">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-wrap item-wrap03">
+                    <div class="item-inner">
+                        <div class="item-cell border-type01">
+                            <div class="title">
+                                <span>项目进度</span>
+                            </div>
+                            <div class="item-border">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+                            <div class="item-content">
+                                <div class="time-process" id="timeProcess">
+                                    <div class="process-inner">
+                                        <b class="line"><strong style="width: 50%;"></strong></b>
+                                        <ul class="clear-fixed-after">
+                                            <li><span>项目中标</span><i></i><small>2018年7月</small></li>
+                                            <li><span>合同签订</span><i></i><small>2018年8月</small></li>
+                                            <li><span>项目全面推进</span><i></i><small>2018年9月</small></li>
+                                            <li><span>选址完成</span><i></i><small>2018年10月</small></li>
+                                            <li><span>装修完成</span><i></i><small>2018年11月</small></li>
+                                            <li><span>服务中心开业</span><i></i><small>2018年12月</small></li>
+                                            <li><span>绩效考核</span><i></i><small>2019年1月</small></li>
+                                            <li><span>项目正常运营</span><i></i><small>2019年2月</small></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-wrap-right">
+                <div class="item-wrap item-wrap04">
+                    <div class="item-inner">
+                        <div class="item-cell border-type01">
+                            <div class="title">
+                                <span>整体情况</span>
+                            </div>
+                            <div class="item-border">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+                            <div class="item-content">
+                                <ul class="clear-fixed-after">
+                                    <li class="total_condition">
+                                        <div class="total_condition_title clear-fixed-after">
+                                            <span>城市销售额排行榜</span>
+                                            <b>01</b>
+                                        </div>
+                                        <div class="total_content">
+                                            <div class="city-rank-chart" id="cityRankChart">
+
+                                            </div>
+                                        </div>
+                                        <div class="total_detail">
+                                            <div class="sell-data-show clear-fixed-after">
+                                                <span>
+                                                    <strong>销售额增速最快</strong>
+                                                    <b><label>宛水</label><i>+</i>52.60<small>%</small></b>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="total_condition">
+                                        <div class="total_condition_title clear-fixed-after">
+                                            <span>产品类目排名</span>
+                                            <b>02</b>
+                                        </div>
+                                        <div class="total_content custom-scroll" style="overflow: auto;">
+                                            <dl>
+                                                <dt>NO.1  火腿系列</dt>
+                                                <dd><span style="width: 50%;"></span></dd>
+                                                <dt>NO.2  红糖系列</dt>
+                                                <dd><span style="width: 80%;"></span></dd>
+                                                <dt>NO.3  糕点系列</dt>
+                                                <dd><span style="width: 60%;"></span></dd>
+                                                <dt>NO.4  辣椒系列</dt>
+                                                <dd><span style="width: 40%;"></span></dd>
+                                                <dt>NO.5  初级农产品</dt>
+                                                <dd><span style="width: 50%;"></span></dd>
+                                            </dl>
+                                        </div>
+                                        <div class="total_detail">
+                                            <div class="sell-data-show clear-fixed-after">
+                                                <span>
+                                                    <strong>销售额同比增数最快</strong>
+                                                    <b><label>糕点系列</label><i>+</i>20.60<small>%</small></b>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="total_condition">
+                                        <div class="total_condition_title clear-fixed-after">
+                                            <span>品牌销售额占比</span>
+                                            <b>03</b>
+                                        </div>
+                                        <div class="total_content">
+                                            <div class="chart-wrap">
+                                                <span><b>30<i>%</i></b><small>火腿系列</small></span>
+                                                <div class="brand-pie-chart" id="brandPieChart">
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="total_detail">
+                                            <div class="sell-data-show clear-fixed-after">
+                                                <span>
+                                                    <strong>火腿系列商品</strong>
+                                                    <b>18,176<small>万元</small></b>
+                                                </span>
+                                                <span style="float: right;">
+                                                    <strong>糕点系列商品</strong>
+                                                    <b>6,1258<small>万元</small></b>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="total_condition">
+                                        <div class="total_condition_title clear-fixed-after">
+                                            <span>客户人群占比</span>
+                                            <b>04</b>
+                                        </div>
+                                        <div class="total_content">
+                                            <div class="chart-wrap">
+                                                <span><b>28.4<i>%</i></b><small>25-35岁</small></span>
+                                                <div class="customer-pie-chart" id="customerPieChart">
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="total_detail">
+                                            <div class="sell-data-show clear-fixed-after">
+                                                <span>
+                                                    <strong>新增产品数</strong>
+                                                    <b>97<small>个</small></b>
+                                                </span>
+                                                <span style="float: right;">
+                                                    <strong>同比增长</strong>
+                                                    <b><i>+</i>30<small>%</small></b>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-wrap item-wrap05">
+                    <div class="item-inner">
+                        <div class="item-cell border-type01">
+                            <div class="title">
+                                <span>销售额增速</span>
+                            </div>
+                            <div class="item-border">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+                            <div class="item-content">
+                                <div class="sell-increase-chart" id="sellIncreaseChart">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/script/jquery.min.js"></script>
+    <script src="../static/lib/jscrollpane/script/jquery.mousewheel.js"></script>
+    <script src="../static/lib/jscrollpane/script/jquery.jscrollpane.min.js"></script>
+    <script src="../static/lib/echarts/echarts.js"></script>
+    <script src="../static/lib/echarts/china.js"></script>
+    <script src="../static/lib/scroll/scroll.js"></script>
+    <script src="../static/script/data.js"></script>
+    <script src="../static/script/plugin.js"></script>
+    <script src="../static/script/ebusiness.js"></script>
+</body>
+</html>

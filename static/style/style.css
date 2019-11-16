@@ -345,7 +345,7 @@ html,body{
     position: relative;
 }
 .business-content .item-wrap01 .text-data dl dt{
-    margin: 10px 0;
+    padding: 10px 0;
 }
 .business-content .item-wrap01 .text-data dl dd{
     overflow: hidden;
@@ -723,7 +723,286 @@ html,body{
 }
 /* 政府数据页面样式结束 */
 
+/* 电商数据页面样式开始 */
+.ebusiness-content .item-wrap{
+    float: initial;
+}
+.ebusiness-content .item-wrap-left{
+    width: 300px;
+    float: left;
+    height: 100%;
+}
+.ebusiness-content .item-wrap-center{
+    width: calc(100% - 860px);
+    float: left;
+    height: 100%;
+}
+.ebusiness-content .item-wrap-right{
+    width: 560px;
+    height: 100%;
+    float: left;
+}
 
+.ebusiness-content .item-wrap01{
+    height: 100%;
+}
+.ebusiness-content .item-wrap01 .sell-rank{
+    height: 100%;
+    overflow: hidden;
+}
+.ebusiness-content .item-wrap01 .sell-rank ul{
+    position: relative;
+}
+.ebusiness-content .item-wrap01 .sell-rank ul li{
+    color: #9bdef0;
+    font-size: 14px;
+    line-height: 36px;
+    padding: 0 10px;
+}
+.ebusiness-content .item-wrap01 .sell-rank ul li:nth-child(odd){
+    background: rgba(39,115,230,.15);
+}
+.ebusiness-content .item-wrap01 .sell-rank ul li i{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.ebusiness-content .item-wrap01 .sell-rank ul li span{
+    display: inline-block;
+    vertical-align: middle;
+    width: 190px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ebusiness-content .item-wrap01 .sell-rank ul li b{
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+.ebusiness-content .item-wrap02,
+.ebusiness-content .item-wrap04{
+    height: calc((100% - 10px) / 3 * 2);
+}
+.ebusiness-content .item-wrap02 .item-content{
+    height: 100%;
+}
+.ebusiness-content .sell-data-show{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.ebusiness-content .sell-data-show span{
+    float: left;
+    margin: 10px;
+}
+.ebusiness-content .sell-data-show span strong{
+    white-space: nowrap;
+    color: #9bdef0;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.ebusiness-content .sell-data-show span b{
+    white-space: nowrap;
+    color: #00ffff;
+    font-size: 24px;
+}
+.ebusiness-content .sell-data-show span b i{
+    color: #ff614d;
+    display: inline-block;
+    margin-right: 5px;
+}
+.ebusiness-content .sell-data-show span b small{
+    font-size: 12px;
+}
+.ebusiness-content .item-wrap02 .sell-map-chart{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+.ebusiness-content .item-wrap03,
+.ebusiness-content .item-wrap05{
+    margin-top: 10px;
+    height: calc((100% - 10px) / 3);
+}
+
+.ebusiness-content .item-wrap03 .time-process{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 20px;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner{
+    position: relative;
+    width: 100%;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner b.line{
+    height:2px;
+    width: 100%;
+    background: rgba(155,222,240,.1);
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner b.line strong{
+    background: #9bdef0;
+    height: 100%;
+    display: block;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(155,222,240,1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner ul{
+    
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li{
+    float: left;
+    width: 12.49999999%;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li span{
+    display: block;
+    white-space: nowrap;
+    color:#9bdef0;
+    text-align: center;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li i{
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li i:after{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background:#9bdef0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li small{
+    display: block;
+    white-space: nowrap;
+    color:#9bdef0;
+    text-align: center;
+}
+
+.ebusiness-content .item-wrap04{}
+.ebusiness-content .item-wrap04 dl{
+    margin: 0 10px;
+}
+.ebusiness-content .item-wrap04 dl dt{
+    color: #fff;
+    font-size: 14px;
+    margin:10px 0;
+}
+.ebusiness-content .item-wrap04 dl dd{}
+.ebusiness-content .item-wrap04 dl dd span{
+    display: block;
+    height: 4px;
+    background: url(../images/icon-process-line.png) repeat-y left top;
+    background-size: 100% auto;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.ebusiness-content .item-wrap04 .city-rank-chart{
+    height: 100%;
+}
+.ebusiness-content .item-wrap04 ul{
+    height: 100%;
+}
+.ebusiness-content .item-wrap04 ul li.total_condition{
+    float:left;
+    width: calc((100% - 20px) / 2);
+    height: calc((100% - 20px) / 2);
+    margin: 5px;
+    background: rgba(39,115,230,.1);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.ebusiness-content .item-wrap04 li.total_condition div.total_condition_title{
+    margin: 0 10px;
+}
+.ebusiness-content .item-wrap04 li.total_condition div.total_condition_title span{
+    color: #9bdef0;
+    font-size: 14px;
+    line-height: 30px;
+}
+.ebusiness-content .item-wrap04 li.total_condition div.total_condition_title b{
+    float: right;
+    color: #00ffff;
+    font-size: 26px;
+}
+.ebusiness-content .item-wrap04 li.total_condition div.total_content{
+    height: calc(100% - 80px);
+    position: relative;
+}
+.ebusiness-content .item-wrap04 li.total_condition div.total_detail{}
+.ebusiness-content .item-wrap04 li.total_condition div.total_detail .sell-data-show{
+    position: initial;
+}
+.ebusiness-content .item-wrap04 li.total_condition div.total_detail b{
+    font-size: 16px;
+}
+.ebusiness-content .item-wrap04 li.total_condition div.total_detail b label{
+    color: #9bdef0;
+    display: inline-block;
+    font-size:14px;
+    margin-right: 10px;
+    opacity: .6;
+}
+.ebusiness-content .item-wrap04 li.total_condition div.total_detail b i{}
+.ebusiness-content .item-wrap04 .chart-wrap{
+    height: 100%;
+}
+.ebusiness-content .item-wrap04 .chart-wrap>div{
+    height: 100%;
+}
+.ebusiness-content .item-wrap04 .chart-wrap>span{
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    text-align: center;
+    width: 100%;
+}
+.ebusiness-content .item-wrap04 .chart-wrap span b{
+    color: #00ffff;
+    display: block;
+    font-size: 18px;
+}
+.ebusiness-content .item-wrap04 .chart-wrap span b i{
+    font-size: 12px;
+}
+.ebusiness-content .item-wrap04 .chart-wrap span small{
+    color: #9bdef0;
+    font-size: 12px;
+}
+.ebusiness-content .item-wrap04 .gdp-pie-chart{
+    height: 100%;
+}
+.ebusiness-content .item-wrap05{}
+.ebusiness-content .item-wrap05 .sell-increase-chart{
+    height: 100%;
+}
+/* 电商数据页面样式结束 */
 
 
 

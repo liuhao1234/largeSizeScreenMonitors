@@ -29,7 +29,7 @@
 		function startScroll(){
 			timer = setInterval(function(){
 				if((top+thisChildrenHeight) === 1){
-					top = 10
+					top = 0
 				}
 				$thisChild.css({top:top--})
 			},opts.speed)

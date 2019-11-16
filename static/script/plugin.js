@@ -175,7 +175,6 @@
             }
 
             var opts = $.extend({},defs,options);
-            var opts = $.extend({},defs,options);
         	var dom = document.getElementById(opts.domId);
             var myChart = echarts.getInstanceByDom(dom);
 
@@ -310,10 +309,10 @@
         initGdpLineChart:function(options){
             var defs = {
                 domId:"",
-                data:""
+                data:"",
+                smooth:true
             }
 
-            var opts = $.extend({},defs,options);
             var opts = $.extend({},defs,options);
         	var dom = document.getElementById(opts.domId);
             var myChart = echarts.getInstanceByDom(dom);
@@ -349,7 +348,7 @@
                     confine:true,
                     formatter:function(params){
                         var data = params[0];
-                        return data.marker+data.name+"年:"+data.value
+                        return data.marker+data.name+":"+data.value
                     }
                 },
                 grid: {
@@ -382,7 +381,7 @@
                 }],
                 yAxis: [{
                     type: 'value',
-                    name:"单位:亿元",
+                    name:opts.yAxisName||"单位:亿元",
                     splitLine: {
                         show: true,
                         lineStyle: {
@@ -408,17 +407,17 @@
                 }],
                 series: [{
                     type: 'line',
-                    smooth: true,
+                    smooth: opts.smooth,
                     symbol:"circle",
                     symbolSize:6,
                     itemStyle:{
                         normal:{
-                            color:"#00ffff"
+                            color:"#00f9df"
                         }
                     },
                     lineStyle: {
                         normal: {
-                            color: "#00ffff"
+                            color: "#00f9df"
                         }
                     },
                     areaStyle: {
@@ -426,10 +425,10 @@
                             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                                 { 
                                     offset: 0,  
-                                    color: 'rgba(61,234,255, 0.9)'
+                                    color: 'rgba(0,249,223, 0.9)'
                                 },{ 
                                     offset: 0.7,  
-                                    color: 'rgba(61,234,255, 0)'
+                                    color: 'rgba(0,249,223, 0)'
                                 }
                             ]),
         
@@ -455,7 +454,6 @@
                 data:""
             }
 
-            var opts = $.extend({},defs,options);
             var opts = $.extend({},defs,options);
         	var dom = document.getElementById(opts.domId);
             var myChart = echarts.getInstanceByDom(dom);
@@ -625,7 +623,6 @@
             }
 
             var opts = $.extend({},defs,options);
-            var opts = $.extend({},defs,options);
         	var dom = document.getElementById(opts.domId);
             var myChart = echarts.getInstanceByDom(dom);
 
@@ -745,6 +742,169 @@
             });
 
             return myChart;
+        },
+
+        initSellBarChart:function(options){
+            var defs = {
+                domId:"",
+                data:""
+            }
+
+            var opts = $.extend({},defs,options);
+        	var dom = document.getElementById(opts.domId);
+            var myChart = echarts.getInstanceByDom(dom);
+
+            if(myChart){
+            	myChart.clear();
+            }else{
+            	myChart = echarts.init(dom);
+            }
+
+            var xAxisData = [];
+            var seriesData = [];
+
+            function getSeriesData(data){
+                $.each(data,function(index,value){
+                    xAxisData.push(value.name)
+                    seriesData.push(value.value)
+                })
+            }
+            getSeriesData(opts.data)
+
+            var option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer:{
+                        type:"shadow",
+                        shadowStyle:{
+                            color:"#00ffff",
+                            opacity:0.1
+                        }
+                    },
+                    confine:true,
+                    formatter:function(params){
+                        var data = params[0];
+                        return data.marker+data.name+":"+data.value
+                    }
+                },
+                grid: {
+                    top: 10,
+                    left: 30,
+                    right: 20,
+                    bottom: 20
+                },
+                xAxis: [{
+                    type: 'category',
+                    data: xAxisData,
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#9bdef0'
+                        },
+                    },
+                    axisLabel: {
+                        textStyle: {
+                            color: '#9bdef0',
+                        },
+                    },
+                    axisTick: {
+                        show:true,
+                        alignWithLabel:true,
+                        lineStyle: {
+                            color: '#9bdef0'
+                        }
+                    },
+                }],
+                yAxis: [{
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: '#9bdef0',
+                            type:'dashed',
+                            opacity:0.2
+                        }
+                    },
+                    axisLine: {
+                        show: false,
+                        lineStyle: {
+                            color: '#9bdef0'
+                        },
+                    },
+                    axisLabel: {
+                        textStyle: {
+                            color: '#9bdef0',
+                        },
+                    },
+                    axisTick: { 
+                        show: false
+                    }
+                }],
+                series: [{
+                    type: 'bar',
+                    data: seriesData,
+                    barWidth: 10,
+                    itemStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(0,244,255,1)' // 0% 处的颜色
+                            }, {
+                                offset: 1,
+                                color: 'rgba(0,77,167,1)' // 100% 处的颜色
+                            }]),
+                            barBorderRadius: [30, 30, 30, 30]
+                        }
+                    }
+                }]
+            };
+
+            myChart.setOption(option);
+            $(window).resize(function(){
+                myChart.resize();
+            });
+
+            return myChart;
+        },
+
+        timeProcessLine:function(options){
+            var defs = {
+                container:""
+            }
+
+            var opts = $.extend({},defs,options);
+            var $container = $(opts.container);
+
+            var processNum = 0;
+            var $linebg = $container.find("b");
+            var $line = $linebg.find("strong");
+            var $ul = $container.find("ul");
+            var $li = $ul.find("li");
+            var liWidth = $li.width();
+            var itemLength = $li.size();
+            var itemWidth = 1/itemLength*100+"%";
+
+            var lineWidth = liWidth*(itemLength-1);
+            var lineLeft = liWidth/2
+            console.log(lineLeft)
+            $li.css({width:itemWidth})
+            $linebg.css({width:lineWidth,left:lineLeft})
+            $line.css({width:0})
+
+            setInterval(function(){
+                processNum++
+                $line.animate({width:liWidth*processNum},2000)
+                if(processNum === itemLength-1){
+                    processNum = -1;
+                }
+            },3000)
+
+            $(window).resize(function(){
+                liWidth = $li.width();
+                lineWidth = liWidth*(itemLength-1);
+                lineLeft = liWidth/2
+                $linebg.css({width:lineWidth,left:lineLeft})
+                $line.css({width:liWidth*processNum})
+            })
         }
     })
 })(jQuery)

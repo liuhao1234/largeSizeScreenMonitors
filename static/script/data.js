@@ -44,6 +44,73 @@ var orderList = [{
             msg:"南四路社区服务点成交一单 异常"
         }]
     }]
+var sellRankList = [{
+        name:"大盛晏火腿官方店",
+        value:45323
+    },{
+        name:"宣威市老倌土特产",
+        value:45323
+    },{
+        name:"云宣稻香园旗舰店",
+        value:45323
+    },{
+        name:"杨宣宣威火腿店",
+        value:45323
+    },{
+        name:"可渡村",
+        value:45323
+    },{
+        name:"宣威市老有为云南土特",
+        value:45323
+    },{
+        name:"随心所逸 土特产",
+        value:45323
+    },{
+        name:"宣威升达火腿",
+        value:45323
+    },{
+        name:"优农宣威",
+        value:45323
+    },{
+        name:"宣威阳光食品",
+        value:45323
+    },{
+        name:"简酥旗舰店",
+        value:45323
+    },{
+        name:"老浦家食品旗舰店",
+        value:45323
+    },{
+        name:"秀滇食品专营店",
+        value:45323
+    },{
+        name:"七彩云南味",
+        value:45323
+    },{
+        name:"杨宣宣威火腿店",
+        value:45323
+    },{
+        name:"可渡村",
+        value:45323
+    },{
+        name:"宣威市老有为云南土特",
+        value:45323
+    },{
+        name:"随心所逸 土特产",
+        value:45323
+    },{
+        name:"宣威升达火腿",
+        value:45323
+    },{
+        name:"优农宣威",
+        value:45323
+    },{
+        name:"宣威阳光食品",
+        value:45323
+    },{
+        name:"简酥旗舰店",
+        value:45323
+    }]
 var learnRanklineChartData = [{
         name:"复州城镇",
         value:220
@@ -363,6 +430,29 @@ var gdpLineData = [{
 },{
     name:"2019",
     value:3211.11
+}]
+
+var sellIncreaseLineData = [{
+    name:"2月",
+    value:10
+},{
+    name:"3月",
+    value:4.4
+},{
+    name:"4月",
+    value:5
+},{
+    name:"5月",
+    value:6.6
+},{
+    name:"6月",
+    value:7
+},{
+    name:"7月",
+    value:1
+},{
+    name:"8月",
+    value:14
 }]
 
 var opulationRatioData = [{

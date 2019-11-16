@@ -4,12 +4,22 @@
     border:0;
 }
 
-ol,ul,li{
+ol,
+ul,
+li{
     list-style:none;
 }
-b,strong{
+
+i{
+    font-style: initial;
+}
+
+b,
+strong,
+label{
     font-weight: normal;
 }
+
 a,
 a:link,
 a:hover,
