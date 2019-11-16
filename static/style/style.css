@@ -817,6 +817,10 @@ html,body{
 .ebusiness-content .sell-data-show span b small{
     font-size: 12px;
 }
+.ebusiness-content .item-wrap02 .map-bg{
+    background: url(../images/map-bg.png) no-repeat center center;
+    background-size: 100%;
+}
 .ebusiness-content .item-wrap02 .sell-map-chart{
     position: absolute;
     top: 0;
@@ -824,8 +828,6 @@ html,body{
     width: 100%;
     height: 100%;
     z-index: 9;
-    background: url(../images/map-bg.png) no-repeat center center;
-    background-size: 100%;
 }
 .ebusiness-content .item-wrap03,
 .ebusiness-content .item-wrap05{
