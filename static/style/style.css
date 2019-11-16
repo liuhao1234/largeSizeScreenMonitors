@@ -688,6 +688,7 @@ html,body{
     width: calc(100% - 4px);
     padding: 2px;
     height: 100%;
+    outline: none;
 }
 .government-content .item-wrap05{
     margin-top: 5px;
