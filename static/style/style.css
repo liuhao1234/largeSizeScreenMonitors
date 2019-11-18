@@ -874,11 +874,13 @@ html,body{
     float: left;
     width: 12.49999999%;
 }
-.ebusiness-content .item-wrap03 .time-process .process-inner ul li:nth-child(odd) span{
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li:nth-child(odd) span,
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li:nth-child(odd) small{
     position: relative;
     top: -7px;
 }
-.ebusiness-content .item-wrap03 .time-process .process-inner ul li:nth-child(even) span{
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li:nth-child(even) span,
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li:nth-child(even) small{
     position: relative;
     top: 5px;
 }
@@ -978,7 +980,7 @@ html,body{
 .ebusiness-content .item-wrap04 li.total_condition div.total_detail b label{
     color: #9bdef0;
     display: inline-block;
-    font-size:14px;
+    font-size:12px;
     margin-right: 10px;
     opacity: .6;
 }

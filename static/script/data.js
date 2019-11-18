@@ -208,7 +208,7 @@ var color = ['#a6c84c', '#ffa022', '#46bee9'];
 
 //通过循环生成series配置
 var mapSeries02 = [];
-[['仙浴湾镇', XYWData],['瓦房店西站', WFDXZData]].forEach(function (item, i) {
+[['复州城镇', XYWData],['仙浴湾镇', WFDXZData]].forEach(function (item, i) {
     mapSeries02.push({
         name: item[0],
         type: 'lines',

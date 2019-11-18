@@ -130,7 +130,7 @@
                         orient: 'vertical',
                         top: 100,
                         left: 10,
-                        data:['仙浴湾镇', '瓦房店西站'],
+                        data:['复州城镇', '仙浴湾镇'],
                         textStyle: {
                             color: '#fff'
                         }
