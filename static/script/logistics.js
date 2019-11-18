@@ -17,9 +17,9 @@ $(function(){
         data:learnRanklineChartData
     })
 
-    $.initLogisticsMapChart({
+    $.initMapChart({
         domId:"logisticsMapChart",
-        data:mapSeries
+        data:mapSeries02
     })
 })
 

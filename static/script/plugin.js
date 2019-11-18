@@ -110,6 +110,61 @@
 
             return myChart;
         },
+        initMapChart : function(options){
+			var defs = {
+                domId : '',
+			    data : ''
+			}
+			var opts = $.extend({},defs,options);
+			var dom = document.getElementById(opts.domId);
+            var myChart = echarts.getInstanceByDom(dom);
+            if(myChart){
+            	myChart.clear();
+            }else{
+            	myChart = echarts.init(dom);
+            }
+
+            var option = {
+                    legend: {
+                        show:true,
+                        orient: 'vertical',
+                        bottom: "center",
+                        right: 10,
+                        data:['仙浴湾镇', '瓦房店西站'],
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    geo: {
+                        map: 'wafangdian',
+                        label: {
+                            emphasis: {
+                                show: false
+                            }
+                        },
+                        zoom:1,
+                        roam: true,
+                        itemStyle: {
+                            normal: {
+                                areaColor: "rgba(25,193,195,.5)",//"rgba(42,196,254,.85)",//'rgba(83,63,199,.9)',
+                                borderColor: 'rgba(25,193,195,1)'
+                            },
+                            emphasis: {
+                                areaColor: "rgba(25,193,195,.8)"//'#6031af'
+                            }
+                        }
+                    },
+		            series: opts.data
+	        }
+
+	        myChart.setOption(option);
+
+			$(window).resize(function(){
+				myChart.resize();
+			})
+
+			return myChart
+		},
         initLogisticsMapChart:function(options){
             var defs = {
                 domId:"",
@@ -125,19 +180,18 @@
             }else{
             	myChart = echarts.init(dom);
             }
-
+            console.log(opts.data)
             var option = {
-                // legend: {
-                //     show:true,
-                //     orient: 'vertical',
-                //     top: 'bottom',
-                //     left: 'right',
-                //     data:['北京 Top10', '上海 Top10', '广州 Top10'],
-                //     textStyle: {
-                //         color: '#fff'
-                //     },
-                //     selectedMode: 'single'
-                // },
+                legend: {
+                    show:true,
+                    orient: 'vertical',
+                    bottom: 10,
+                    left: 10,
+                    data:['北京 Top10', '上海 Top10', '广州 Top10'],
+                    textStyle: {
+                        color: '#fff'
+                    }
+                },
                 geo: {
                     map: 'china',
                     label: {

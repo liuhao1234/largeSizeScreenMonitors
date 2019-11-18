@@ -136,7 +136,155 @@ var learnRanklineChartData = [{
         name:"老虎屯镇",
         value:100
     }]
+// 一下是瓦房店坐标map
+var wfdCoordMap = {
+    "仙浴湾镇":[121.538642,39.71005],
+    "驼山乡":[121.667423,39.802352],
+    "永宁镇":[121.906588,39.924637],
+    "许屯镇":[122.118157,40.036097],
+    "瓦窝镇":[122.039968,39.694062],
+    "得利寺镇":[122.074463,39.791708],
+    "西海农场":[121.55129,39.62207],
+    "交流岛街道":[121.424809,39.442205],
+    "万家岭镇":[122.16645,39.944996],
+    "西杨乡":[121.745612,39.828068],
+    "郭家屯":[121.815751,39.582042],
+    "二傻沟":[122.03307,39.828954],
+    "马鞍山":[121.916937,39.768641],
+    "红沿河镇":[121.571987,39.765091],
+    "于望山":[121.709967,39.579372],
+    "瓦房店西站":[121.845647,39.662075],
+    "吕沟村":[121.55129,39.525072],
+    "碾盘石":[121.461603,39.65052],
+    "小马场":[121.584635,39.565134],
+    "黑帽山":[121.866344,39.712714],
+    "歪头山":[121.716866,39.525072],
+}
 
+var XYWData = [
+    [{name:"仙浴湾镇"},{name:"驼山乡",value:95}],
+    [{name:"仙浴湾镇"},{name:"永宁镇",value:95}],
+    [{name:"仙浴湾镇"},{name:"许屯镇",value:95}],
+    [{name:"仙浴湾镇"},{name:"瓦窝镇",value:95}],
+    [{name:"仙浴湾镇"},{name:"得利寺镇",value:95}],
+    [{name:"仙浴湾镇"},{name:"西海农场",value:95}],
+    [{name:"仙浴湾镇"},{name:"交流岛街道",value:95}],
+    [{name:"仙浴湾镇"},{name:"碾盘石",value:95}],
+    [{name:"仙浴湾镇"},{name:"黑帽山",value:95}],
+    [{name:"仙浴湾镇"},{name:"西杨乡",value:95}]
+]
+var WFDXZData = [
+    [{name:"瓦房店西站"},{name:"驼山乡",value:195}],
+    [{name:"瓦房店西站"},{name:"永宁镇",value:95}],
+    [{name:"瓦房店西站"},{name:"许屯镇",value:95}],
+    [{name:"瓦房店西站"},{name:"瓦窝镇",value:95}],
+    [{name:"瓦房店西站"},{name:"得利寺镇",value:95}],
+    [{name:"瓦房店西站"},{name:"西海农场",value:95}],
+    [{name:"瓦房店西站"},{name:"交流岛街道",value:95}],
+    [{name:"瓦房店西站"},{name:"碾盘石",value:95}],
+    [{name:"瓦房店西站"},{name:"黑帽山",value:95}],
+    [{name:"瓦房店西站"},{name:"西杨乡",value:55}]
+]
+var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
+var convertData = function (data) {
+    var res = [];
+    for (var i = 0; i < data.length; i++) {
+        var dataItem = data[i];
+        var fromCoord = wfdCoordMap[dataItem[0].name];
+        var toCoord = wfdCoordMap[dataItem[1].name];
+        if (fromCoord && toCoord) {
+            res.push({
+                fromName: dataItem[0].name,
+                toName: dataItem[1].name,
+                coords: [fromCoord, toCoord]
+            });
+        }
+    }
+    return res;
+};
+
+//自定义图形配色
+var color = ['#a6c84c', '#ffa022', '#46bee9'];
+
+//通过循环生成series配置
+var mapSeries02 = [];
+[['仙浴湾镇', XYWData],['瓦房店西站', WFDXZData]].forEach(function (item, i) {
+    mapSeries02.push({
+        name: item[0],
+        type: 'lines',
+        zlevel: 1,
+        effect: {
+            show: true,
+            period: 6,
+            trailLength: 0.7,
+            color: '#fff',
+            symbolSize: 3
+        },
+        lineStyle: {
+            normal: {
+                color: color[i],
+                width: 0,
+                curveness: 0.2
+            }
+        },
+        //使用定义好的数据格式转换函数生成lines的数据
+        data: convertData(item[1])
+    },
+    {
+        name: item[0],
+        type: 'lines',
+        zlevel: 2,
+        symbol: ['none', 'arrow'],
+        symbolSize: 10,
+        effect: {
+            show: true,
+            period: 6,
+            trailLength: 0,
+            symbol: planePath,
+            symbolSize: 15
+        },
+        lineStyle: {
+            normal: {
+                color: color[i],
+                width: 1,
+                opacity: 0.6,
+                curveness: 0.2
+            }
+        },
+        data: convertData(item[1])
+    },
+    {
+        name: item[0],
+        type: 'effectScatter',
+        coordinateSystem: 'geo',
+        zlevel: 2,
+        rippleEffect: {
+            brushType: 'stroke'
+        },
+        label: {
+            normal: {
+                show: true,
+                position: 'right',
+                formatter: '{b}'
+            }
+        },
+        symbolSize: function (val) {
+            return val[2] / 8;
+        },
+        itemStyle: {
+            normal: {
+                color: color[i]
+            }
+        },
+        //生成散点图数据[{"name":"拉萨","value":[91.1865,30.1465,50]},...]
+        data: item[1].map(function (dataItem) {
+            return {
+                name: dataItem[1].name,
+                value: wfdCoordMap[dataItem[1].name].concat([dataItem[1].value])
+            };
+        })
+    });
+});
 
 // 以下是地图迁徙图数据
 var geoCoordMap = {
