@@ -128,8 +128,8 @@
                     legend: {
                         show:true,
                         orient: 'vertical',
-                        bottom: "center",
-                        right: 10,
+                        top: 100,
+                        left: 10,
                         data:['仙浴湾镇', '瓦房店西站'],
                         textStyle: {
                             color: '#fff'
@@ -564,7 +564,7 @@
                 }],
                 yAxis: [{
                     type: 'value',
-                    name:"贫困人数",
+                    name:"单位：亿元",
                     splitLine: {
                         show: true,
                         lineStyle: {
@@ -607,7 +607,7 @@
                             opacity: 1
                         }
                     },
-                    data: [220, 182, 191, 234, 290, 330, 310]
+                    data: [220, 182, 161, 134, 110, 100, 90]
                 },{
                     name: 'rightA',
                     tooltip: {
@@ -630,7 +630,7 @@
                             opacity: .8
                         }
                     },
-                    data: [220, 182, 191, 234, 290, 330, 310],
+                    data: [220, 182, 161, 134, 110, 100, 90],
                 },{
                     name: 'topA',
                     tooltip: {
@@ -657,7 +657,7 @@
                     symbolSize: ['14', '14'],
                     symbolOffset: ['0', '-7'],
                     symbolPosition: 'end',
-                    data: [220, 182, 191, 234, 290, 330, 310],
+                    data: [220, 182, 161, 134, 110, 100, 90],
                     z: 3
                 },]
             };
@@ -687,33 +687,40 @@
             }
 
             var color01 = new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                    offset: 0,
-                    color: '#52c0ff' // 0% 处的颜色
-                },
-                {
-                    offset: 0.5,
-                    color: '#52e9ff' // 50% 处的颜色
-                },
-                {
-                    offset: 1,
-                    color: '#52ffed' // 100% 处的颜色
-                }
-            ])
+                        offset: 0,
+                        color: '#52c0ff' // 0% 处的颜色
+                    },{
+                        offset: 1,
+                        color: '#52ffed' // 100% 处的颜色
+                    }
+                ])
             var color02 = new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                         offset: 0,
                         color: '#ffd74d' // 0% 处的颜色
-                    },
-                    {
-                        offset: 0.5,
-                        color: '#ffb24d' // 50% 处的颜色
-                    },
-                    {
+                    },{
                         offset: 1,
                         color: '#ff944d' // 100% 处的颜色
                     }
                 ])
+            var color03 = new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: '#4dffd3' // 0% 处的颜色
+                    },{
+                        offset: 1,
+                        color: '#40d5b0' // 100% 处的颜色
+                    }
+                ])
+
+            var color04 = new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: '#958aff' // 0% 处的颜色
+                    },{
+                        offset: 1,
+                        color: '#867de0' // 100% 处的颜色
+                    }
+                ])
             
-            var colors = [color01,color02]
+            var colors = [color01,color02,color03,color04]
             var outerData = [];
             var innerData = [];
 
@@ -768,7 +775,7 @@
                             color:"#9bdef0",
                             formatter: function(params){
                                 // console.log(params)
-                                return params.name+"占比:"+params.percent+"%"+"\n\n人数:"+Number(params.value).toLocaleString()
+                                return params.name+":"+params.percent+"%"+"\n\n金额:"+Number(params.value).toLocaleString()+"亿元"
                             },
                         }
                     },

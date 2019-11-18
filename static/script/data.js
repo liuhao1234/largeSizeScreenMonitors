@@ -547,13 +547,13 @@ var mapSeries = [];
 // 以上是地图迁徙图数据
 
 var gdpPieData = [{
-    name:"第一产业",
+    name:"淘宝",
     value:43
 },{
-    name:"第二产业",
+    name:"京东",
     value:96
 },{
-    name:"第三产业",
+    name:"苏宁",
     value:71
 }]
 
@@ -604,9 +604,15 @@ var sellIncreaseLineData = [{
 }]
 
 var opulationRatioData = [{
-    name:"男",
-    value:938374
+    name:"苹果",
+    value:938
 },{
-    name:"女",
-    value:969837
+    name:"地瓜",
+    value:969
+},{
+    name:"樱桃",
+    value:599
+},{
+    name:"葡萄",
+    value:432
 }]

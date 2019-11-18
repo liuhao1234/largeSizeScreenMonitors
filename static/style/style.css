@@ -399,6 +399,7 @@ html,body{
     overflow: hidden;
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 .result-info span{
     color:#00ffff;
@@ -695,8 +696,8 @@ html,body{
     height: calc((100vh - 90px) / 3);
 }
 .government-content .item-wrap05 .government-text{
-    height: calc(100% - 20px);
-    margin: 10px;
+    height: 100%;
+    margin: 0 10px;
     overflow: auto;
 }
 .government-content .item-wrap05 .government-text p{
@@ -705,8 +706,7 @@ html,body{
     text-indent: 2em;
     line-height: 24px;
 }
-.government-content .item-wrap04 .item-content,
-.government-content .item-wrap05 .item-content{
+.government-content .item-wrap04 .item-content{
     height: 100%;
 }
 .government-content .item-wrap06{}
