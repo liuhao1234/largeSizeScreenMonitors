@@ -734,12 +734,12 @@ html,body{
     height: 100%;
 }
 .ebusiness-content .item-wrap-center{
-    width: calc(100% - 860px);
+    width: calc(100% - 800px);
     float: left;
     height: 100%;
 }
 .ebusiness-content .item-wrap-right{
-    width: 560px;
+    width: 500px;
     height: 100%;
     float: left;
 }
@@ -802,7 +802,7 @@ html,body{
     color: #9bdef0;
     display: block;
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 12px;
 }
 .ebusiness-content .sell-data-show span b{
     white-space: nowrap;
@@ -873,6 +873,14 @@ html,body{
 .ebusiness-content .item-wrap03 .time-process .process-inner ul li{
     float: left;
     width: 12.49999999%;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li:nth-child(odd) span{
+    position: relative;
+    top: -7px;
+}
+.ebusiness-content .item-wrap03 .time-process .process-inner ul li:nth-child(even) span{
+    position: relative;
+    top: 5px;
 }
 .ebusiness-content .item-wrap03 .time-process .process-inner ul li span{
     display: block;
