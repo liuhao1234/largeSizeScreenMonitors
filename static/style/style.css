@@ -696,7 +696,7 @@ html,body{
 .government-content .item-wrap04 .video{
     width: calc(100% - 4px);
     padding: 2px;
-    height: 100%;
+    height: 99%;
     outline: none;
 }
 .government-content .item-wrap05{
