@@ -1,15 +1,13 @@
 @media screen and (max-width: 1440px) {
-    .result-info{
-        width: 200px;
-    }
+    .result-info,
     .business-content .item-wrap01 .text-data{
-        width:160px;
+        width: 200px;
     }
 }
 
-@media screen and (min-width: 1440px) and (max-width: 1660px) {
-    
-    .result-info{
+@media screen and (min-width: 1440px) and (max-width: 1660px) { 
+    .result-info,
+    .business-content .item-wrap01 .text-data{
         width: 280px;
     }
 }

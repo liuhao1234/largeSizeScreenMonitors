@@ -114,7 +114,7 @@
 			var defs = {
                 domId : '',
 			    data : ''
-			}
+            }
 			var opts = $.extend({},defs,options);
 			var dom = document.getElementById(opts.domId);
             var myChart = echarts.getInstanceByDom(dom);
@@ -142,6 +142,9 @@
                                 show: false
                             }
                         },
+                        layoutCenter: ['40%', '50%'],
+                        // 如果宽高比大于 1 则宽度为 100，如果小于 1 则高度为 100，保证了不超过 100x100 的区域
+                        layoutSize: "75%",
                         zoom:1,
                         roam: true,
                         itemStyle: {

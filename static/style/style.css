@@ -333,15 +333,16 @@ html,body{
     position: absolute;
     top: 10px;
     right: 10px;
-    width:260px;
+    width:300px;
     height: 160px;
+    padding: 0 10px;
     overflow: hidden;
     z-index: 9;
 }
 .business-content .item-wrap01 .text-data dl{
     white-space: nowrap;
     color:#9bdef0;
-    text-align: right;
+    text-align: left;
     position: relative;
 }
 .business-content .item-wrap01 .text-data dl dt{
