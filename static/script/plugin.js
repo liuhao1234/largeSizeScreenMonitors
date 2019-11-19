@@ -1,6 +1,6 @@
 (function($){
     $.extend({
-        initRankLineChart:function(options){
+        initRankBarChart:function(options){
             var defs = {
                 domId:"",
                 data:""
@@ -84,6 +84,16 @@
                 series: [{
                     type: 'bar',
                     barWidth: 14,
+                    label:{
+                        normal:{
+                            show:true,
+                            position:"top",
+                            color:"#fff",
+                            formatter:function(params){
+                                return params.value
+                            }
+                        }
+                    },
                     itemStyle: {
                         normal:{
                             barBorderRadius: 10,
