@@ -158,28 +158,28 @@ var sellRankList = [{
     }]
 var learnRanklineChartData = [{
         name:"复州城镇",
-        value:220
+        value:350
     },{
         name:"松树镇",
-        value:182
+        value:234
     },{
         name:"得利寺镇",
         value:191
     },{
         name:"万家岭镇",
-        value:350
+        value:180
     },{
         name:"许屯镇",
-        value:234
+        value:166
     },{
         name:"永宁镇",
-        value:190
+        value:150
     },{
         name:"谢屯镇",
-        value:168
+        value:140
     },{
         name:"老虎屯镇",
-        value:100
+        value:130
     }]
 // 一下是瓦房店坐标map
 var wfdCoordMap = {

@@ -4,15 +4,28 @@ $(function(){
         domId:"gdpPieChart",
         data:gdpPieData
     })
+    
     gdpPieChartCarousel(gdpPieChart);
-    $.initGdpLineChart({
+    var gdpLineChart = $.initGdpLineChart({
         domId:"gdpLineChart",
         data:gdpLineData
     })
 
-    $.initPoorConditionBarChart({
+    $.chartCarousel({
+        chartObj:gdpLineChart,
+        chartData:gdpLineData,
+        speed:3000
+    })
+
+    var poorConditionBarChart = $.init3DBarChart({
         domId:"poorBarChart",
-        data:""
+        data:learnRanklineChartData
+    })
+
+    $.chartCarousel({
+        chartObj:poorConditionBarChart,
+        chartData:learnRanklineChartData,
+        speed:3000
     })
 
     $.initePopulationRatioPieChart({

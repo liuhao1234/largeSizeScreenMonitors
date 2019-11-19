@@ -13,11 +13,16 @@ $(function(){
         domId:"sellMapChart",
         data:mapSeries
     })
-    $.initGdpLineChart({
+    var gdpLineChart = $.initGdpLineChart({
         domId:"sellIncreaseChart",
         smooth:false,
         yAxisName:"单位:%",
         data:sellIncreaseLineData
+    })
+    $.chartCarousel({
+        chartObj:gdpLineChart,
+        chartData:sellIncreaseLineData,
+        speed:3000
     })
     $.initGdpPieChart({
         domId:"brandPieChart",
@@ -27,9 +32,14 @@ $(function(){
         domId:"customerPieChart",
         data:gdpPieData
     })
-    $.initSellBarChart({
+    var cityRankChart = $.initSellBarChart({
         domId:"cityRankChart",
         data:learnRanklineChartData
+    })
+    $.chartCarousel({
+        chartObj:cityRankChart,
+        chartData:learnRanklineChartData,
+        speed:3000
     })
 })
 

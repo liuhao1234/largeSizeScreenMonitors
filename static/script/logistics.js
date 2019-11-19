@@ -16,54 +16,18 @@ $(function(){
         domId:"learnRankChart",
         data:learnRanklineChartData
     })
-
-    rankBarChartCarousel(rankBarChart)
+    $.chartCarousel({
+        chartObj:rankBarChart,
+        chartData:learnRanklineChartData,
+        speed:3000
+    })
 
     $.initMapChart({
         domId:"logisticsMapChart",
         data:mapSeries02
     })
 })
-function rankBarChartCarousel(rankBarChart){
-    var index = 0;
-    rankBarChart.dispatchAction({
-        type:"highlight",
-        seriesIndex: 0,
-        dataIndex: index
-    })
-    rankBarChart.dispatchAction({
-        type: 'showTip',
-        seriesIndex: 0,
-        dataIndex: index
-    });
-    rankBarChart.dispatchAction({
-        type: 'showTip',
-        seriesIndex: 0,
-        dataIndex: index
-    });
-    index++
-    setInterval(function(){
-        rankBarChart.dispatchAction({
-            type:"highlight",
-            seriesIndex: 0,
-            dataIndex: index
-        })
-        rankBarChart.dispatchAction({
-            type: 'showTip',
-            seriesIndex: 0,
-            dataIndex: index
-        });
-        rankBarChart.dispatchAction({
-            type: 'showTip',
-            seriesIndex: 0,
-            dataIndex: index
-        });
-        index++
-        if(index === learnRanklineChartData.length){
-            index = 0
-        }
-    },3000)
-}
+
 function initOrderList(data){
     var $list = $("#myScroll").find("dl");
     var str = "";

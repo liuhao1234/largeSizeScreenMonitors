@@ -1,5 +1,54 @@
 (function($){
     $.extend({
+        chartCarousel:function(options){
+            var defs = {
+                chartObj:"",
+                chartData:"",
+                speed:5000
+            }
+            var opts = $.extend({},defs,options);
+            var index = 0;
+            var chart = opts.chartObj;
+            var chartDataLength = opts.chartData.length
+            chart.dispatchAction({
+                type:"highlight",
+                seriesIndex: 0,
+                dataIndex: index
+            })
+            chart.dispatchAction({
+                type: 'showTip',
+                seriesIndex: 0,
+                dataIndex: index
+            });
+            chart.dispatchAction({
+                type: 'showTip',
+                seriesIndex: 0,
+                dataIndex: index
+            });
+            index++
+            setInterval(function(){
+                var curData = gdpPieData[index];
+                chart.dispatchAction({
+                    type: 'downplay',
+                    seriesIndex: 0,
+                    dataIndex: index
+                });
+                chart.dispatchAction({
+                    type: 'showTip',
+                    seriesIndex: 0,
+                    dataIndex: index
+                });
+                chart.dispatchAction({
+                    type:"highlight",
+                    seriesIndex: 0,
+                    dataIndex: index
+                })
+                index++
+                if(index === chartDataLength){
+                    index = 0
+                }
+            },opts.speed)
+        },
         initRankBarChart:function(options){
             var defs = {
                 domId:"",
@@ -412,13 +461,13 @@
                         lineStyle:{
                             width:2,
                             color:"#00ffff",
-                            opacity:0.4
+                            opacity:0.2
                         }
                     },
                     confine:true,
                     formatter:function(params){
                         var data = params[0];
-                        return data.marker+data.name+":"+data.value
+                        return data.name+":"+data.value
                     }
                 },
                 grid: {
@@ -518,7 +567,7 @@
             return myChart;
         },
 
-        initPoorConditionBarChart:function(options){
+        init3DBarChart:function(options){
             var defs = {
                 domId:"",
                 data:""
@@ -533,7 +582,16 @@
             }else{
             	myChart = echarts.init(dom);
             }
+            var xAxisData = [];
+            var seriesData = [];
 
+            function getSeriesData(data){
+                $.each(data,function(index,value){
+                    xAxisData.push(value.name)
+                    seriesData.push(value.value)
+                })
+            }
+            getSeriesData(opts.data)
             var option = {
                 tooltip:{
                     trigger:"axis",
@@ -547,7 +605,7 @@
                     confine:true,
                     formatter:function(params){
                         var data = params[0];
-                        return data.marker+data.name+"年:"+data.value
+                        return data.marker+data.name+":"+data.value
                     }
                 },
                 grid: {
@@ -576,7 +634,7 @@
                             color: '#9bdef0'
                         }
                     },
-                    data: ['复州城镇', '松树镇', '得利寺镇', '万家岭镇', '许屯镇', '永宁镇', '谢屯镇']
+                    data: xAxisData
                 }],
                 yAxis: [{
                     type: 'value',
@@ -623,7 +681,7 @@
                             opacity: 1
                         }
                     },
-                    data: [220, 182, 161, 134, 110, 100, 90]
+                    data: seriesData
                 },{
                     name: 'rightA',
                     tooltip: {
@@ -646,7 +704,7 @@
                             opacity: .8
                         }
                     },
-                    data: [220, 182, 161, 134, 110, 100, 90],
+                    data: seriesData,
                 },{
                     name: 'topA',
                     tooltip: {
@@ -673,7 +731,7 @@
                     symbolSize: ['14', '14'],
                     symbolOffset: ['0', '-7'],
                     symbolPosition: 'end',
-                    data: [220, 182, 161, 134, 110, 100, 90],
+                    data: seriesData,
                     z: 3
                 },]
             };
