@@ -4,11 +4,20 @@ $(function(){
         domId:"gdpPieChart",
         data:gdpPieData
     })
-    
-    gdpPieChartCarousel(gdpPieChart);
+    var $webSellData = $(".web-sell-data");
+    var $webSellDataValue = $webSellData.find("b strong");
+    var $webSellDataName = $webSellData.find("small");
+    $.chartCarousel({
+        chartObj:gdpPieChart,
+        chartData:gdpPieData,
+        callback:function(params){
+            $webSellDataValue.text(params.value)
+            $webSellDataName.text(params.name)
+        }
+    })
     var gdpLineChart = $.initGdpLineChart({
         domId:"gdpLineChart",
-        data:gdpLineData
+        data:gdpLineData,
     })
 
     $.chartCarousel({
@@ -25,7 +34,7 @@ $(function(){
     $.chartCarousel({
         chartObj:poorConditionBarChart,
         chartData:learnRanklineChartData,
-        speed:3000
+        speed:4000
     })
 
     $.initePopulationRatioPieChart({
@@ -34,51 +43,6 @@ $(function(){
     })
     
 })
-function gdpPieChartCarousel(gdpPieChart){//chart轮播
-    var index = 0;
-    var $webSellData = $(".web-sell-data");
-    var $webSellDataValue = $webSellData.find("b strong");
-    var $webSellDataName = $webSellData.find("small");
-    var curData = gdpPieData[index];
-    $webSellDataValue.text(curData.value)
-    $webSellDataName.text(curData.name)
-    gdpPieChart.dispatchAction({
-        type:"highlight",
-        name:curData.name
-    })
-    gdpPieChart.dispatchAction({
-        type: 'showTip',
-        seriesIndex: 0,
-        dataIndex: index
-    });
-    gdpPieChart.dispatchAction({
-        type: 'showTip',
-        name:curData.name
-    });
-    index++
-    setInterval(function(){
-        var curData = gdpPieData[index];
-        $webSellDataValue.text(curData.value)
-        $webSellDataName.text(curData.name)
-        gdpPieChart.dispatchAction({
-            type: 'downplay',
-            seriesIndex: 0
-        });
-        gdpPieChart.dispatchAction({
-            type: 'showTip',
-            seriesIndex: 0,
-            dataIndex: index
-        });
-        gdpPieChart.dispatchAction({
-            type:"highlight",
-            name:curData.name
-        })
-        index++
-        if(index === gdpPieData.length){
-            index = 0
-        }
-    },5000)
-}
 
 function customScroll(selector){
     var bars = '.jspHorizontalBar, .jspVerticalBar';

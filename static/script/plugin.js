@@ -4,7 +4,10 @@
             var defs = {
                 chartObj:"",
                 chartData:"",
-                speed:5000
+                speed:5000,
+                callback:function(params){
+
+                }
             }
             var opts = $.extend({},defs,options);
             var index = 0;
@@ -25,6 +28,7 @@
                 seriesIndex: 0,
                 dataIndex: index
             });
+            opts.callback(opts.chartData[index])
             index++
             setInterval(function(){
                 var curData = gdpPieData[index];
@@ -43,6 +47,7 @@
                     seriesIndex: 0,
                     dataIndex: index
                 })
+                opts.callback(opts.chartData[index])
                 index++
                 if(index === chartDataLength){
                     index = 0
