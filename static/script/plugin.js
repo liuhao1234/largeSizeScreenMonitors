@@ -183,7 +183,7 @@
             }else{
             	myChart = echarts.init(dom);
             }
-            console.log(opts.data)
+            // console.log(opts.data)
             var option = {
                 legend: {
                     show:true,
@@ -949,7 +949,7 @@
 
             var lineWidth = liWidth*(itemLength-1);
             var lineLeft = liWidth/2
-            console.log(lineLeft)
+            // console.log(lineLeft)
             $li.css({width:itemWidth})
             $linebg.css({width:lineWidth,left:lineLeft})
             $line.css({width:0})
