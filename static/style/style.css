@@ -624,6 +624,9 @@ html,body{
 .government-content .item-wrap01 .chart-wrap span b{
     color: #00ffff;
     display: block;
+    font-size: 12px;
+}
+.government-content .item-wrap01 .chart-wrap span b strong{
     font-size: 22px;
 }
 .government-content .item-wrap01 .chart-wrap span small{

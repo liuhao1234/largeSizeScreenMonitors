@@ -24,17 +24,27 @@ $(function(){
 function gdpPieChartCarousel(gdpPieChart){//chart轮播
     var index = 0;
     var $webSellData = $(".web-sell-data");
-    var $webSellDataValue = $webSellData.find("b");
+    var $webSellDataValue = $webSellData.find("b strong");
     var $webSellDataName = $webSellData.find("small");
-    var curData = gdpPieData[index++];
+    var curData = gdpPieData[index];
     $webSellDataValue.text(curData.value)
     $webSellDataName.text(curData.name)
     gdpPieChart.dispatchAction({
         type:"highlight",
         name:curData.name
     })
+    gdpPieChart.dispatchAction({
+        type: 'showTip',
+        seriesIndex: 0,
+        dataIndex: index
+    });
+    gdpPieChart.dispatchAction({
+        type: 'showTip',
+        name:curData.name
+    });
+    index++
     setInterval(function(){
-        var curData = gdpPieData[index++];
+        var curData = gdpPieData[index];
         $webSellDataValue.text(curData.value)
         $webSellDataName.text(curData.name)
         gdpPieChart.dispatchAction({
@@ -42,9 +52,15 @@ function gdpPieChartCarousel(gdpPieChart){//chart轮播
             seriesIndex: 0
         });
         gdpPieChart.dispatchAction({
+            type: 'showTip',
+            seriesIndex: 0,
+            dataIndex: index
+        });
+        gdpPieChart.dispatchAction({
             type:"highlight",
             name:curData.name
         })
+        index++
         if(index === gdpPieData.length){
             index = 0
         }

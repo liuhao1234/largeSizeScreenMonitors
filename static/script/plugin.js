@@ -321,6 +321,10 @@
                 // color:["#35c07e","#e8a930","#187cb2"],
                 tooltip: {
                   show: true,
+                  formatter:function(params){
+                      console.log(params)
+                    return params.name+"<br/>占比:"+params.percent+"%<br/>数量:"+params.value+"亿元"
+                  }
                 },
                 series: [
                   {
