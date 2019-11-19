@@ -24,13 +24,38 @@ $(function(){
         chartData:sellIncreaseLineData,
         speed:3000
     })
-    $.initGdpPieChart({
+    var brandPieChart = $.initGdpPieChart({
         domId:"brandPieChart",
-        data:gdpPieData
+        data:gdpPieData02
     })
-    $.initGdpPieChart({
+    var $brandPieData = $(".brand-pie-text");
+    var $brandPieValue = $brandPieData.find("b strong");
+    var $brandPieName = $brandPieData.find("small");
+    $.chartCarousel({
+        chartObj:brandPieChart,
+        chartData:gdpPieData02,
+        callback:function(params){
+            $brandPieValue.text(params.value)
+            $brandPieName.text(params.name)
+        }
+    })
+    var customerPieChart = $.initGdpPieChart({
         domId:"customerPieChart",
-        data:gdpPieData
+        data:gdpPieData03,
+        tooltipFormatter:function(params){
+            return params.name+"<br/>占比:"+params.percent+"%<br/>人数:"+params.value+"人"
+        }
+    })
+    var $customerPieData = $(".customer-pie-text");
+    var $customerPieValue = $customerPieData.find("b strong");
+    var $customerPieName = $customerPieData.find("small");
+    $.chartCarousel({
+        chartObj:customerPieChart,
+        chartData:gdpPieData03,
+        callback:function(params){
+            $customerPieValue.text(params.value)
+            $customerPieName.text(params.name)
+        }
     })
     var cityRankChart = $.initSellBarChart({
         domId:"cityRankChart",

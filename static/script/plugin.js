@@ -23,19 +23,12 @@
                 seriesIndex: 0,
                 dataIndex: index
             });
-            chart.dispatchAction({
-                type: 'showTip',
-                seriesIndex: 0,
-                dataIndex: index
-            });
             opts.callback(opts.chartData[index])
             index++
             setInterval(function(){
-                var curData = gdpPieData[index];
                 chart.dispatchAction({
                     type: 'downplay',
-                    seriesIndex: 0,
-                    dataIndex: index
+                    seriesIndex: 0
                 });
                 chart.dispatchAction({
                     type: 'showTip',
@@ -385,7 +378,7 @@
                 // color:["#35c07e","#e8a930","#187cb2"],
                 tooltip: {
                   show: true,
-                  formatter:function(params){
+                  formatter:opts.tooltipFormatter||function(params){
                     return params.name+"<br/>占比:"+params.percent+"%<br/>金额:"+params.value+"亿元"
                   }
                 },

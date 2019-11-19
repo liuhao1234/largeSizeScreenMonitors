@@ -1009,6 +1009,9 @@ html,body{
 .ebusiness-content .item-wrap04 .chart-wrap span b{
     color: #00ffff;
     display: block;
+    font-size: 12px;
+}
+.ebusiness-content .item-wrap04 .chart-wrap span b strong{
     font-size: 18px;
 }
 .ebusiness-content .item-wrap04 .chart-wrap span b i{

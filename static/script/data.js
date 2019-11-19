@@ -602,6 +602,28 @@ var gdpPieData = [{
     value:71
 }]
 
+var gdpPieData02 = [{
+    name:"火腿系列",
+    value:43
+},{
+    name:"水果系列",
+    value:96
+},{
+    name:"农产品系列",
+    value:71
+}]
+
+var gdpPieData03 = [{
+    name:"20-35岁",
+    value:43
+},{
+    name:"35-45岁",
+    value:96
+},{
+    name:"45-55岁",
+    value:71
+}]
+
 var gdpLineData = [{
     name:"2013",
     value:1280
