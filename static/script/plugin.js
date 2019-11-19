@@ -322,7 +322,6 @@
                 tooltip: {
                   show: true,
                   formatter:function(params){
-                      console.log(params)
                     return params.name+"<br/>占比:"+params.percent+"%<br/>数量:"+params.value+"亿元"
                   }
                 },
