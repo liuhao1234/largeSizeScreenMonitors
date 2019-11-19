@@ -15,6 +15,10 @@ html,body{
     display: block;
     clear: both;
 }
+.AnimateflipInX{
+    animation: flipInX 5s ease infinite;
+    -webkit-animation: flipInX 5s ease infinite;
+}
 /* 头部样式 */
 .header{}
 .header .title{
