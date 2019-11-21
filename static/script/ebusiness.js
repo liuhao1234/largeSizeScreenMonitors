@@ -9,62 +9,60 @@ $(function(){
     // 自定义滚动条
     customScroll('.custom-scroll')
 
-    $.initLogisticsMapChart({
+    $.initMapChart({
         domId:"sellMapChart",
-        data:mapSeries
+        legendPosition:{
+            bottom: 10,
+            left: 10
+        },
+        data:chinaMapData
     })
-    var gdpLineChart = $.initGdpLineChart({
+    $.initLineChart({
         domId:"sellIncreaseChart",
         smooth:false,
-        yAxisName:"单位:%",
+        valueAxisName:"单位:%",
+        carousel:true,
+        carouselSpeed:3000,
         data:sellIncreaseLineData
     })
-    $.chartCarousel({
-        chartObj:gdpLineChart,
-        chartData:sellIncreaseLineData,
-        speed:3000
-    })
-    var brandPieChart = $.initGdpPieChart({
-        domId:"brandPieChart",
-        data:gdpPieData02
-    })
+
     var $brandPieData = $(".brand-pie-text");
     var $brandPieValue = $brandPieData.find("b strong");
     var $brandPieName = $brandPieData.find("small");
-    $.chartCarousel({
-        chartObj:brandPieChart,
-        chartData:gdpPieData02,
-        callback:function(params){
+    $.initPieChart({
+        domId:"brandPieChart",
+        data:gdpPieData02,
+        carousel:true,
+        carouselFunc:function(params){
             $brandPieValue.text(params.value)
             $brandPieName.text(params.name)
-        }
-    })
-    var customerPieChart = $.initGdpPieChart({
-        domId:"customerPieChart",
-        data:gdpPieData03,
-        tooltipFormatter:function(params){
-            return params.name+"<br/>占比:"+params.percent+"%<br/>人数:"+params.value+"人"
         }
     })
     var $customerPieData = $(".customer-pie-text");
     var $customerPieValue = $customerPieData.find("b strong");
     var $customerPieName = $customerPieData.find("small");
-    $.chartCarousel({
-        chartObj:customerPieChart,
-        chartData:gdpPieData03,
-        callback:function(params){
+    $.initPieChart({
+        domId:"customerPieChart",
+        data:gdpPieData03,
+        carousel:true,
+        carouselFunc:function(params){
             $customerPieValue.text(params.value)
             $customerPieName.text(params.name)
+        },
+        tooltipFormatter:function(params){
+            return params.name+"<br/>占比:"+params.percent+"%<br/>人数:"+params.value+"人"
         }
     })
-    var cityRankChart = $.initSellBarChart({
+
+    $.initBarChart({
         domId:"cityRankChart",
+        carousel:true,
+        carouselSpeed:3000,
+        colorType:"blue",
+        barWidth:10,
+        labelShow:false,
+        grid:[20,20,20,40],
         data:learnRanklineChartData
-    })
-    $.chartCarousel({
-        chartObj:cityRankChart,
-        chartData:learnRanklineChartData,
-        speed:3000
     })
 })
 

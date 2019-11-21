@@ -12,19 +12,24 @@ $(function(){
         speed: 30, //数值越大，速度越慢
     });
 
-    var rankBarChart = $.initRankBarChart({
+    $.initBarChart({
         domId:"learnRankChart",
+        grid:[30,20,40,40],
+        carousel:true,
+        carouselSpeed:3000,
         data:learnRanklineChartData
-    })
-    $.chartCarousel({
-        chartObj:rankBarChart,
-        chartData:learnRanklineChartData,
-        speed:3000
     })
 
     $.initMapChart({
         domId:"logisticsMapChart",
-        data:mapSeries02
+        mapName:"wafangdian",
+        mapCenter:["35%","50%"],
+        legendPosition:{
+            top: 100,
+            left: 10
+        },
+        mapSize:"75%",
+        data:WFDMapData
     })
 })
 

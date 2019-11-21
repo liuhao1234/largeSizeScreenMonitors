@@ -1,47 +1,38 @@
 $(function(){
     customScroll(".government-text")
-    var gdpPieChart = $.initGdpPieChart({
-        domId:"gdpPieChart",
-        data:gdpPieData
-    })
     var $webSellData = $(".web-sell-data");
     var $webSellDataValue = $webSellData.find("b strong");
     var $webSellDataName = $webSellData.find("small");
-    $.chartCarousel({
-        chartObj:gdpPieChart,
-        chartData:gdpPieData,
-        callback:function(params){
+    $.initPieChart({
+        domId:"gdpPieChart",
+        data:gdpPieData,
+        carousel:true,
+        carouselFunc:function(params){
             $webSellDataValue.text(params.value)
             $webSellDataName.text(params.name)
         }
     })
-    var gdpLineChart = $.initGdpLineChart({
+    $.initLineChart({
         domId:"gdpLineChart",
-        data:gdpLineData,
+        smooth:true,
+        carousel:true,
+        carouselSpeed:3000,
+        data:gdpLineData
     })
 
-    $.chartCarousel({
-        chartObj:gdpLineChart,
-        chartData:gdpLineData,
-        speed:3000
-    })
-
-    var poorConditionBarChart = $.init3DBarChart({
+    $.init3DBarChart({
         domId:"poorBarChart",
+        carousel:true,
+        carouselSpeed:4000,
         data:learnRanklineChartData
     })
 
-    $.chartCarousel({
-        chartObj:poorConditionBarChart,
-        chartData:learnRanklineChartData,
-        speed:4000
-    })
-
-    $.initePopulationRatioPieChart({
+    $.initPieChart({
         domId:"opulationRatio",
+        labelShow:true,
+        radius:['45%', '65%'],
         data:opulationRatioData
     })
-    
 })
 
 function customScroll(selector){

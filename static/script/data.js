@@ -205,134 +205,51 @@ var wfdCoordMap = {
     "杨家满族乡":[121.765484,39.649486],
     "三台满族乡":[121.61545,39.647436],
 }
-
-var XYWData = [
-    [{name:"复州城镇"},{name:"松树镇",value:95}],
-    [{name:"复州城镇"},{name:"得利寺镇",value:95}],
-    [{name:"复州城镇"},{name:"万家岭镇",value:95}],
-    [{name:"复州城镇"},{name:"许屯镇",value:95}],
-    [{name:"复州城镇"},{name:"谢屯镇",value:95}],
-    [{name:"复州城镇"},{name:"老虎屯镇",value:95}],
-    [{name:"复州城镇"},{name:"红沿河镇",value:95}],
-    [{name:"复州城镇"},{name:"瓦窝镇",value:95}],
-    [{name:"复州城镇"},{name:"元台镇",value:95}],
-    [{name:"复州城镇"},{name:"土城乡",value:95}]
-]
-var WFDXZData = [
-    [{name:"仙浴湾镇"},{name:"三台满族乡",value:195}],
-    [{name:"仙浴湾镇"},{name:"杨家满族乡",value:95}],
-    [{name:"仙浴湾镇"},{name:"赵屯乡",value:95}],
-    [{name:"仙浴湾镇"},{name:"驼山乡",value:95}],
-    [{name:"仙浴湾镇"},{name:"得利寺镇",value:95}],
-    [{name:"仙浴湾镇"},{name:"泡崖乡",value:95}],
-    [{name:"仙浴湾镇"},{name:"阎店乡",value:95}],
-    [{name:"仙浴湾镇"},{name:"土城乡",value:95}],
-    [{name:"仙浴湾镇"},{name:"瓦窝镇",value:95}],
-    [{name:"仙浴湾镇"},{name:"西杨乡",value:55}]
-]
-var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
-var convertData = function (data) {
-    var res = [];
-    for (var i = 0; i < data.length; i++) {
-        var dataItem = data[i];
-        var fromCoord = wfdCoordMap[dataItem[0].name];
-        var toCoord = wfdCoordMap[dataItem[1].name];
-        if (fromCoord && toCoord) {
-            res.push({
-                fromName: dataItem[0].name,
-                toName: dataItem[1].name,
-                coords: [fromCoord, toCoord]
-            });
-        }
-    }
-    return res;
-};
-
-//自定义图形配色
-var color = ['#a6c84c', '#ffa022', '#46bee9'];
-
-//通过循环生成series配置
-var mapSeries02 = [];
-[['复州城镇', XYWData],['仙浴湾镇', WFDXZData]].forEach(function (item, i) {
-    mapSeries02.push({
-        name: item[0],
-        type: 'lines',
-        zlevel: 1,
-        effect: {
-            show: true,
-            period: 6,
-            trailLength: 0.7,
-            color: '#fff',
-            symbolSize: 3
-        },
-        lineStyle: {
-            normal: {
-                color: color[i],
-                width: 0,
-                curveness: 0.2
-            }
-        },
-        //使用定义好的数据格式转换函数生成lines的数据
-        data: convertData(item[1])
-    },
-    {
-        name: item[0],
-        type: 'lines',
-        zlevel: 2,
-        symbol: ['none', 'arrow'],
-        symbolSize: 10,
-        effect: {
-            show: true,
-            period: 6,
-            trailLength: 0,
-            symbol: planePath,
-            symbolSize: 15
-        },
-        lineStyle: {
-            normal: {
-                color: color[i],
-                width: 1,
-                opacity: 0.6,
-                curveness: 0.2
-            }
-        },
-        data: convertData(item[1])
-    },
-    {
-        name: item[0],
-        type: 'effectScatter',
-        coordinateSystem: 'geo',
-        zlevel: 2,
-        rippleEffect: {
-            brushType: 'stroke'
-        },
-        label: {
-            normal: {
-                show: true,
-                position: 'right',
-                formatter: '{b}'
-            }
-        },
-        symbolSize: function (val) {
-            return val[2] / 8;
-        },
-        itemStyle: {
-            normal: {
-                color: color[i]
-            }
-        },
-        //生成散点图数据[{"name":"拉萨","value":[91.1865,30.1465,50]},...]
-        data: item[1].map(function (dataItem) {
-            return {
-                name: dataItem[1].name,
-                value: wfdCoordMap[dataItem[1].name].concat([dataItem[1].value])
-            };
-        })
-    });
-});
-
+var WFDMapData = [{
+    name:"泡崖乡",
+    data:[
+        [{name:"泡崖乡"},{name:"三台满族乡",value:195}],
+        [{name:"泡崖乡"},{name:"杨家满族乡",value:95}],
+        [{name:"泡崖乡"},{name:"赵屯乡",value:95}],
+        [{name:"泡崖乡"},{name:"驼山乡",value:95}],
+        [{name:"泡崖乡"},{name:"得利寺镇",value:95}],
+        [{name:"泡崖乡"},{name:"谢屯镇",value:95}],
+        [{name:"泡崖乡"},{name:"阎店乡",value:95}],
+        [{name:"泡崖乡"},{name:"土城乡",value:95}],
+        [{name:"泡崖乡"},{name:"瓦窝镇",value:95}],
+        [{name:"泡崖乡"},{name:"西杨乡",value:55}]
+    ]
+},{
+    name:"仙浴湾镇",
+    data:[
+        [{name:"仙浴湾镇"},{name:"三台满族乡",value:195}],
+        [{name:"仙浴湾镇"},{name:"杨家满族乡",value:95}],
+        [{name:"仙浴湾镇"},{name:"赵屯乡",value:95}],
+        [{name:"仙浴湾镇"},{name:"驼山乡",value:95}],
+        [{name:"仙浴湾镇"},{name:"得利寺镇",value:95}],
+        [{name:"仙浴湾镇"},{name:"泡崖乡",value:95}],
+        [{name:"仙浴湾镇"},{name:"阎店乡",value:95}],
+        [{name:"仙浴湾镇"},{name:"土城乡",value:95}],
+        [{name:"仙浴湾镇"},{name:"瓦窝镇",value:95}],
+        [{name:"仙浴湾镇"},{name:"西杨乡",value:55}]
+    ]
+},{
+    name:"复州城镇",
+    data:[
+        [{name:"复州城镇"},{name:"松树镇",value:95}],
+        [{name:"复州城镇"},{name:"得利寺镇",value:95}],
+        [{name:"复州城镇"},{name:"万家岭镇",value:95}],
+        [{name:"复州城镇"},{name:"许屯镇",value:95}],
+        [{name:"复州城镇"},{name:"谢屯镇",value:95}],
+        [{name:"复州城镇"},{name:"老虎屯镇",value:95}],
+        [{name:"复州城镇"},{name:"红沿河镇",value:95}],
+        [{name:"复州城镇"},{name:"瓦窝镇",value:95}],
+        [{name:"复州城镇"},{name:"元台镇",value:95}],
+        [{name:"复州城镇"},{name:"土城乡",value:95}]
+    ]
+}]
 // 以下是地图迁徙图数据
-var geoCoordMap = {
+var chinaCoordMap = {
     '上海': [121.4648,31.2891],
     '东莞': [113.8953,22.901],
     '东营': [118.7073,37.5513],
@@ -449,146 +366,49 @@ var geoCoordMap = {
     '韶关': [113.7964,24.7028]
 };
 
-var BJData = [
-    [{name:'北京'}, {name:'上海',value:95}],
-    [{name:'北京'}, {name:'广州',value:90}],
-    [{name:'北京'}, {name:'大连',value:80}],
-    [{name:'北京'}, {name:'南宁',value:70}],
-    [{name:'北京'}, {name:'南昌',value:60}],
-    [{name:'北京'}, {name:'拉萨',value:50}],
-    [{name:'北京'}, {name:'长春',value:40}],
-    [{name:'北京'}, {name:'包头',value:30}],
-    [{name:'北京'}, {name:'重庆',value:20}],
-    [{name:'北京'}, {name:'常州',value:10}]
-];
-
-var SHData = [
-    [{name:'上海'},{name:'包头',value:95}],
-    [{name:'上海'},{name:'昆明',value:90}],
-    [{name:'上海'},{name:'广州',value:80}],
-    [{name:'上海'},{name:'郑州',value:70}],
-    [{name:'上海'},{name:'长春',value:60}],
-    [{name:'上海'},{name:'重庆',value:50}],
-    [{name:'上海'},{name:'长沙',value:40}],
-    [{name:'上海'},{name:'北京',value:30}],
-    [{name:'上海'},{name:'丹东',value:20}],
-    [{name:'上海'},{name:'大连',value:10}]
-];
-
-var GZData = [
-    [{name:'广州'},{name:'福州',value:95}],
-    [{name:'广州'},{name:'太原',value:90}],
-    [{name:'广州'},{name:'长春',value:80}],
-    [{name:'广州'},{name:'重庆',value:70}],
-    [{name:'广州'},{name:'西安',value:60}],
-    [{name:'广州'},{name:'成都',value:50}],
-    [{name:'广州'},{name:'常州',value:40}],
-    [{name:'广州'},{name:'北京',value:30}],
-    [{name:'广州'},{name:'北海',value:20}],
-    [{name:'广州'},{name:'海口',value:10}]
-];
-    
-//飞机矢量图（矢量路径），用于连线的尾迹特效
-var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
-var convertData = function (data) {
-    var res = [];
-    for (var i = 0; i < data.length; i++) {
-        var dataItem = data[i];
-        var fromCoord = geoCoordMap[dataItem[0].name];
-        var toCoord = geoCoordMap[dataItem[1].name];
-        if (fromCoord && toCoord) {
-            res.push({
-                fromName: dataItem[0].name,
-                toName: dataItem[1].name,
-                coords: [fromCoord, toCoord]
-            });
-        }
-    }
-    return res;
-};
-
-//自定义图形配色
-var color = ['#a6c84c', '#ffa022', '#46bee9'];
-
-//通过循环生成series配置
-var mapSeries = [];
-[['北京', BJData], ['上海', SHData], ['广州', GZData]].forEach(function (item, i) {
-    mapSeries.push({
-        name: item[0] + ' Top10',
-        type: 'lines',
-        zlevel: 1,
-        effect: {
-            show: true,
-            period: 6,
-            trailLength: 0.7,
-            color: '#fff',
-            symbolSize: 3
-        },
-        lineStyle: {
-            normal: {
-                color: color[i],
-                width: 0,
-                curveness: 0.2
-            }
-        },
-        //使用定义好的数据格式转换函数生成lines的数据
-        data: convertData(item[1])
-    },
-    {
-        name: item[0] + ' Top10',
-        type: 'lines',
-        zlevel: 2,
-        symbol: ['none', 'arrow'],
-        symbolSize: 10,
-        effect: {
-            show: true,
-            period: 6,
-            trailLength: 0,
-            symbol: planePath,
-            symbolSize: 15
-        },
-        lineStyle: {
-            normal: {
-                color: color[i],
-                width: 1,
-                opacity: 0.6,
-                curveness: 0.2
-            }
-        },
-        data: convertData(item[1])
-    },
-    {
-        name: item[0] + ' Top10',
-        type: 'effectScatter',
-        coordinateSystem: 'geo',
-        zlevel: 2,
-        rippleEffect: {
-            brushType: 'stroke'
-        },
-        label: {
-            normal: {
-                show: true,
-                position: 'right',
-                formatter: '{b}'
-            }
-        },
-        symbolSize: function (val) {
-            return val[2] / 8;
-        },
-        itemStyle: {
-            normal: {
-                color: color[i]
-            }
-        },
-        //生成散点图数据[{"name":"拉萨","value":[91.1865,30.1465,50]},...]
-        data: item[1].map(function (dataItem) {
-            return {
-                name: dataItem[1].name,
-                value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
-            };
-        })
-    });
-});
+var chinaMapData = [{
+    name:"北京",
+    data:[
+        [{name:'北京'}, {name:'上海',value:95}],
+        [{name:'北京'}, {name:'广州',value:90}],
+        [{name:'北京'}, {name:'大连',value:80}],
+        [{name:'北京'}, {name:'南宁',value:70}],
+        [{name:'北京'}, {name:'南昌',value:60}],
+        [{name:'北京'}, {name:'拉萨',value:50}],
+        [{name:'北京'}, {name:'长春',value:40}],
+        [{name:'北京'}, {name:'包头',value:30}],
+        [{name:'北京'}, {name:'重庆',value:20}],
+        [{name:'北京'}, {name:'常州',value:10}]
+    ]
+},{
+    name:"上海",
+    data:[
+        [{name:'上海'},{name:'包头',value:95}],
+        [{name:'上海'},{name:'昆明',value:90}],
+        [{name:'上海'},{name:'广州',value:80}],
+        [{name:'上海'},{name:'郑州',value:70}],
+        [{name:'上海'},{name:'长春',value:60}],
+        [{name:'上海'},{name:'重庆',value:50}],
+        [{name:'上海'},{name:'长沙',value:40}],
+        [{name:'上海'},{name:'北京',value:30}],
+        [{name:'上海'},{name:'丹东',value:20}],
+        [{name:'上海'},{name:'大连',value:10}]
+    ]
+},{
+    name:"广州",
+    data:[
+        [{name:'广州'},{name:'福州',value:95}],
+        [{name:'广州'},{name:'太原',value:90}],
+        [{name:'广州'},{name:'长春',value:80}],
+        [{name:'广州'},{name:'重庆',value:70}],
+        [{name:'广州'},{name:'西安',value:60}],
+        [{name:'广州'},{name:'成都',value:50}],
+        [{name:'广州'},{name:'常州',value:40}],
+        [{name:'广州'},{name:'北京',value:30}],
+        [{name:'广州'},{name:'北海',value:20}],
+        [{name:'广州'},{name:'海口',value:10}]
+    ]
+}]
 // 以上是地图迁徙图数据
 
 var gdpPieData = [{
@@ -682,4 +502,41 @@ var opulationRatioData = [{
 },{
     name:"葡萄",
     value:432
+}]
+
+var yieldData = [{
+    name:"驼山乡",
+    value:1938
+},{
+    name:"西杨乡",
+    value:1669
+},{
+    name:"许屯镇",
+    value:1299
+},{
+    name:"永宁镇",
+    value:932
+},{
+    name:"复州城镇",
+    value:800
+}]
+
+var salesTrendData = [{
+    name:"一月份",
+    value:1038
+},{
+    name:"二月份",
+    value:1669
+},{
+    name:"三月份",
+    value:1299
+},{
+    name:"四月份",
+    value:1432
+},{
+    name:"五月份",
+    value:800
+},{
+    name:"六月份",
+    value:1000
 }]
