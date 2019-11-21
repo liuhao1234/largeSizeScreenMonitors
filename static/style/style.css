@@ -714,6 +714,70 @@ html,body{
     text-indent: 2em;
     line-height: 24px;
 }
+.government-content .item-wrap05 ul.product-list{
+    height: 100%;
+    margin: 0 5px;
+}
+.government-content .item-wrap05 ul.product-list li{
+    float: left;
+    width: 24.99999999%;
+    height: 100%;
+}
+div.product-panel{
+    background: #0e2053;
+    border-radius: 4px;
+    max-width: 200px;
+    height: calc(100% - 20px);   
+    margin: 10px auto;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+div.product-panel h2{
+    color: #9bdef0;
+    text-align: left;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 5px;
+}
+div.product-panel div.product-img{
+    height: calc(100% - 66px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.product-panel img{
+    max-width: 100px;
+    width: 100%;
+}
+div.product-panel span{
+    background:#10265d;
+    display: block;
+    float: left;
+    width: 49.99999999%;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+div.product-panel span h3{
+    color: #9bdef0;
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 20px;
+}
+div.product-panel span strong{
+    color: #9bdef0;
+    padding: 0 5px;
+    white-space: nowrap;
+}
+div.product-panel span strong b{
+    font-size: 14px;
+    color: #00ffff;
+}
 .government-content .item-wrap04 .item-content{
     height: 100%;
 }

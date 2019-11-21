@@ -3,6 +3,10 @@
     .business-content .item-wrap01 .text-data{
         width: 200px;
     }
+    div.product-panel span strong b,
+    div.product-panel h2{
+        font-size: 12px;
+    }
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1660px) { 
