@@ -7,6 +7,12 @@
     div.product-panel h2{
         font-size: 12px;
     }
+    .government-content .item-wrap01 .chart-wrap span b strong{
+        font-size: 14px;
+    }
+    .government-content .item-wrap01 .chart-wrap span small{
+        font-size: 12px;
+    }
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1660px) { 

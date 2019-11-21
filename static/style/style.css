@@ -1095,6 +1095,90 @@ div.product-panel span strong b{
 /* 电商数据页面样式结束 */
 
 
+/* 产品详情页面样式 */
+.product-detail-content .item-wrap{
+    float: initial;
+}
+.product-detail-content .item-wrap-left{
+    width: 400px;
+    height: 100%;
+    float: left;
+}
+.product-detail-content .item-wrap-center{
+    float: left;
+    width: calc(100% - 800px);
+    height: 100%;
+}
+.product-detail-content .item-wrap-right{
+    width: 400px;
+    height: 100%;
+    float: left;
+}
+.product-detail-content .item-wrap-left .item-wrap,
+.product-detail-content .item-wrap-right .item-wrap{
+    height: calc((100% - 20px) / 3);
+}
+.product-detail-content .item-wrap01{}
+.product-detail-content .item-wrap01 .product-rank-tip{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -70px;
+}
+.product-detail-content .item-wrap01 .product-rank-tip li{
+    margin: 5px 0;
+    background: url(../images/tip-bg.png) repeat-y top left;
+    background-size: 100% auto;
+    text-align: right;
+    padding: 5px 10px;
+    width: 100px;
+}
+.product-detail-content .item-wrap01 .product-rank-tip li b{
+    font-size: 16px;
+    color: #00ffff;
+    display: block;
+    margin-bottom: 5px;
+}
+.product-detail-content .item-wrap01 .product-rank-tip li small{
+    color: #9bdef0;
+}
+.product-detail-content .item-wrap01 .product_kind{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-detail-content .item-wrap01 .product_kind img{
+    display: block;
+    opacity: .9;
+    width: 50%;
+    margin-left: -50px;
+}
+.product-detail-content .item-wrap02{
+    margin-top: 10px;
+}
+.product-detail-content .item-wrap02 .product-yield,
+.product-detail-content .item-wrap03 .sales-rank,
+.product-detail-content .item-wrap06 .sales-trend,
+.product-detail-content .item-wrap07 .sales-rank-city{
+    width: 100%;
+    height: 100%;
+}
+.product-detail-content .item-wrap03{
+    margin-top: 10px;
+}
+.product-detail-content .item-wrap04{
+    height: 100%;
+}
+.product-detail-content .item-wrap05{}
+.product-detail-content .item-wrap06{
+    margin-top: 10px;
+}
+.product-detail-content .item-wrap07{
+    margin-top: 10px;
+}
+
 
 
 
