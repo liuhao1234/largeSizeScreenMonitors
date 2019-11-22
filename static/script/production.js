@@ -38,10 +38,10 @@ $(function(){
 
     $(".product-panel").click(function(ev){
         $(".product-detail-content").fadeIn();
-        console.log(ev)
+        // console.log(ev)
         var index = $(ev.currentTarget).data("id");
         var txt,imgUrl
-        console.log(index)
+        // console.log(index)
         switch (index) {
             case 0:
                 txt = "地瓜"
