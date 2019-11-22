@@ -34,7 +34,7 @@ $(function(){
     })
 
     $(".product-panel").click(function(ev){
-        $(".product-detail-content").show();
+        $(".product-detail-content").fadeIn();
         console.log(ev)
         var index = $(ev.currentTarget).data("id");
         var txt,imgUrl
@@ -64,7 +64,7 @@ $(function(){
         showDetail();
     })
     $(".close_detail").click(function(){
-        $(".product-detail-content").hide();
+        $(".product-detail-content").fadeOut();
     })
 })
 
