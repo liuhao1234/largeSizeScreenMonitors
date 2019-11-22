@@ -36,8 +36,8 @@
                 })
                 return result;
             }
-            console.log(legendData)
-            console.log(seriseData)
+            // console.log(legendData)
+            // console.log(seriseData)
             var option = {
                     legend: {
                         show:opts.lengendShow,
