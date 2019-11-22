@@ -1,18 +1,20 @@
 (function($){
     $.extend({
-        initMapChart : function(options){
+        initMapChartPath : function(options){
 			var defs = {
                 domId : '',
                 mapName:'china',
                 mapCenter:["50%","50%"],
                 mapSize:"100%",
+                lengendShow:true,
                 legendPosition:{
                     top: "auto",
                     left: "auto",
                     right: "auto",
                     bottom: "auto"
                 },
-			    data : ''
+                data : '',
+                coordMap:''
             }
 			var opts = $.extend({},defs,options);
 			var dom = document.getElementById(opts.domId);
@@ -24,12 +26,8 @@
             }
 
             var legendData = getLegend(opts.data);
-            if(opts.mapName === "china"){
-                var geoCoordMap = chinaCoordMap
-            }else{
-                var geoCoordMap = wfdCoordMap
-            }
-            var seriseData = $.getMapSeries(opts.data,geoCoordMap)
+            
+            var seriseData = $.getMapSeriesPath(opts.data,opts.coordMap)
 
             function getLegend(data){
                 var result = [];
@@ -41,7 +39,7 @@
 
             var option = {
                     legend: {
-                        show:true,
+                        show:opts.lengendShow,
                         orient: 'vertical',
                         top: opts.legendPosition.top||"auto",
                         left: opts.legendPosition.left||"auto",
@@ -82,6 +80,118 @@
 			$(window).resize(function(){
 				myChart.resize();
 			})
+
+			return myChart
+        },
+
+        initMapChartPoint : function(options){
+            var defs = {
+                domId : '',
+                mapName:'china',
+                mapCenter:["50%","50%"],
+                mapSize:"100%",
+                labelFormatter:function(params){
+                    return params.name+"("+params.value[2]+")"
+                },
+                data : '',
+                coordMap:'',
+                onclick:function(params){}
+            }
+			var opts = $.extend({},defs,options);
+			var dom = document.getElementById(opts.domId);
+            var myChart = echarts.getInstanceByDom(dom);
+            if(myChart){
+            	myChart.clear();
+            }else{
+            	myChart = echarts.init(dom);
+            }
+            var symbolSize = getSymbolSize(opts.data)
+            var seriesData = $.getMapSeriesPoint(opts.data,opts.coordMap)
+
+            function getSymbolSize(data){
+                var values = []
+                var maxSize = 25
+                $.each(data,function(index,value){
+                    values.push(value.value)
+                })
+                var valueMax = Math.max.apply(null,values);
+                // console.log(Math.floor(valueMax/20))
+                return Math.floor(valueMax/maxSize)
+            }
+            // console.log(seriesData)
+            var option = {
+                legend: {
+                    show:false
+                },
+                geo: {
+                    map: opts.mapName,
+                    label: {
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    layoutCenter: opts.mapCenter,
+                    layoutSize: opts.mapSize,
+                    zoom:1,
+                    roam: true,
+                    itemStyle: {
+                        normal: {
+                            areaColor: 'rgba(25,193,195,.7)',
+                            borderColor: 'rgba(25,193,195,1)'
+                        },
+                        emphasis: {
+                            areaColor: 'rgba(25,193,195,.8)'
+                        }
+                    }
+                },
+                series : {
+                    type: 'effectScatter',
+                    coordinateSystem: 'geo',
+                    data: seriesData,
+                    symbolSize: function (val) {
+                        // console.log(val[2]/symbolSize)
+                        return val[2]/symbolSize;
+                    },
+                    showEffectOn: 'render',
+                    rippleEffect: {
+                        brushType: 'stroke'
+                    },
+                    hoverAnimation: true,
+                    label: {
+                        normal: {
+                            formatter: opts.labelFormatter,
+                            position: 'right',
+                            show: true
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#ffa022',
+                            shadowBlur: 10,
+                            shadowColor: '#333'
+                        }
+                    },
+                    zlevel: 1
+                }
+            };
+
+            myChart.setOption(option);
+
+			$(window).resize(function(){
+				myChart.resize();
+            })
+            opts.onclick(opts.data[0])
+            myChart.on("click",function(params){
+                if(params.componentType !== "series") return
+                // console.log(params)
+                var seriesData = $.getMapSeriesPoint(opts.data,opts.coordMap,params.dataIndex)
+                opts.onclick(opts.data[params.dataIndex])
+                myChart.setOption({
+                    series:{
+                        data:seriesData
+                    }
+                })
+            })
 
 			return myChart
         },
@@ -212,6 +322,7 @@
                 },
                 tooltip: {
                     show: true,
+                    confine:true,
                     formatter:opts.ttFormatter
                 },
                 series: [
@@ -860,7 +971,7 @@
             },opts.speed)
         },
 
-        getMapSeries:function(data,geoCoordMap){
+        getMapSeriesPath:function(data,geoCoordMap){
             var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
             var color = ['#a6c84c', '#ffa022', '#46bee9'];
             var mapSeries = [];
@@ -895,7 +1006,7 @@
                         }
                     },
                     //使用定义好的数据格式转换函数生成lines的数据
-                    data: $.convertData(item[1],geoCoordMap)
+                    data: $.convertDataForPath(item[1],geoCoordMap)
                 },
                 {
                     name: item[0] + ' Top10',
@@ -918,7 +1029,7 @@
                             curveness: 0.2
                         }
                     },
-                    data: $.convertData(item[1],geoCoordMap)
+                    data: $.convertDataForPath(item[1],geoCoordMap)
                 },
                 {
                     name: item[0] + ' Top10',
@@ -955,7 +1066,7 @@
             return mapSeries
         },
 
-        convertData:function (data,geoCoordMap) {
+        convertDataForPath:function (data,geoCoordMap) {
             var res = [];
             for (var i = 0; i < data.length; i++) {
                 var dataItem = data[i];
@@ -966,6 +1077,33 @@
                         fromName: dataItem[0].name,
                         toName: dataItem[1].name,
                         coords: [fromCoord, toCoord]
+                    });
+                }
+            }
+            return res;
+        },
+
+        getMapSeriesPoint:function(data,geoCoordMap,activeIndex){
+            var res = [];
+            if(!activeIndex){
+                activeIndex = 0
+            }
+            for (var i = 0; i < data.length; i++) {
+                var geoCoord = geoCoordMap[data[i].name];
+                if(i == activeIndex){
+                    res.push({
+                        name: data[i].name,
+                        value: geoCoord.concat(data[i].value),
+                        itemStyle:{
+                            normal:{
+                                color:"#a6c84c"
+                            }
+                        }
+                    });
+                }else{
+                    res.push({
+                        name: data[i].name,
+                        value: geoCoord.concat(data[i].value),
                     });
                 }
             }
@@ -1011,6 +1149,20 @@
                 $linebg.css({width:lineWidth,left:lineLeft})
                 $line.css({width:liWidth*processNum})
             })
+        },
+
+        customScroll:function(selector){
+            var bars = '.jspHorizontalBar, .jspVerticalBar';
+            $(selector).bind('jsp-initialised', function (event, isScrollable) {
+                $(this).find(bars).hide();
+            }).jScrollPane().hover(
+                function () {
+                    $(this).find(bars).stop().fadeTo('fast', 0.9);
+                },
+                function () {
+                    $(this).find(bars).stop().fadeTo('fast', 0);
+                }
+            );	
         }
     })
 })(jQuery)

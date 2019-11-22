@@ -20,7 +20,7 @@ $(function(){
         data:learnRanklineChartData
     })
 
-    $.initMapChart({
+    $.initMapChartPath({
         domId:"logisticsMapChart",
         mapName:"wafangdian",
         mapCenter:["35%","50%"],
@@ -29,7 +29,8 @@ $(function(){
             left: 10
         },
         mapSize:"75%",
-        data:WFDMapData
+        data:WFDMapData,
+        coordMap:coordMap
     })
 })
 

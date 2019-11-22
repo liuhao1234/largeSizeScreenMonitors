@@ -7,15 +7,16 @@ $(function(){
         container:"#timeProcess"
     })
     // 自定义滚动条
-    customScroll('.custom-scroll')
+    $.customScroll('.custom-scroll')
 
-    $.initMapChart({
+    $.initMapChartPath({
         domId:"sellMapChart",
         legendPosition:{
             bottom: 10,
             left: 10
         },
-        data:chinaMapData
+        data:chinaMapData,
+        coordMap:coordMap
     })
     $.initLineChart({
         domId:"sellIncreaseChart",
@@ -65,20 +66,6 @@ $(function(){
         data:learnRanklineChartData
     })
 })
-
-function customScroll(selector){
-    var bars = '.jspHorizontalBar, .jspVerticalBar';
-    $(selector).bind('jsp-initialised', function (event, isScrollable) {
-        $(this).find(bars).hide();
-    }).jScrollPane().hover(
-        function () {
-            $(this).find(bars).stop().fadeTo('fast', 0.9);
-        },
-        function () {
-            $(this).find(bars).stop().fadeTo('fast', 0);
-        }
-    );	
-}
 
 function initSellRankList(data){
     var $list = $("#sellRank").find("ul");

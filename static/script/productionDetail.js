@@ -26,4 +26,40 @@ $(function(){
         domId:"salesTrendChart",
         data:salesTrendData,
     })
+    var index = 0;
+    $.initMapChartPoint({
+        domId : 'mapChartPoint',
+        mapName:'wafangdian',
+        mapCenter:["40%","40%"],
+        mapSize:"70%",
+        data : pointData,
+        coordMap:coordMap,
+        onclick:function(params){
+            // console.log(params)
+            if(index%2){
+                var pathData = pathData02
+            }else{
+                var pathData = pathData01
+            }
+            index++
+            $.initMapChartPath({
+                domId : 'mapChartPath',
+                mapName:'china',
+                mapCenter:["50%","50%"],
+                mapSize:"100%",
+                lengendShow:false,
+                data : pathData,
+                coordMap:coordMap
+            })
+        }
+    })
+    $.initMapChartPath({
+        domId : 'mapChartPath',
+        mapName:'china',
+        mapCenter:["50%","50%"],
+        mapSize:"100%",
+        lengendShow:false,
+        data : pathData01,
+        coordMap:coordMap
+    })
 })

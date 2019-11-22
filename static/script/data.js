@@ -181,6 +181,38 @@ var learnRanklineChartData = [{
         name:"老虎屯镇",
         value:130
     }]
+var pointData = [
+    { name: '复州城镇', value: 200 },
+    { name: '松树镇', value: 190 },
+    { name: '得利寺镇', value: 100 },
+    { name: '万家岭镇', value: 50 },
+    { name: '许屯镇', value: 220 },
+    { name: '永宁镇', value: 60 },
+    { name: '谢屯镇', value: 160 },
+    { name: '老虎屯镇', value: 90 },
+    { name: '红沿河镇', value: 110 },
+    { name: '仙浴湾镇',  value: 105}
+];
+var pathData01 = [{
+    name:"复州城镇",
+    data:[
+        [{name:"复州城镇"},{name:"上海",value:195}],
+        [{name:"复州城镇"},{name:"呼和浩特",value:95}],
+        [{name:"复州城镇"},{name:"成都",value:95}],
+        [{name:"复州城镇"},{name:"北京",value:95}],
+        [{name:"复州城镇"},{name:"扬州",value:95}]
+    ]
+}]
+var pathData02 = [{
+    name:"仙浴湾镇",
+    data:[
+        [{name:"仙浴湾镇"},{name:"哈尔滨",value:95}],
+        [{name:"仙浴湾镇"},{name:"包头",value:95}],
+        [{name:"仙浴湾镇"},{name:"合肥",value:95}],
+        [{name:"仙浴湾镇"},{name:"长春",value:95}],
+        [{name:"仙浴湾镇"},{name:"沈阳",value:55}]
+    ]
+}]
 // 一下是瓦房店坐标map
 var wfdCoordMap = {
     "复州城镇":[121.717213,39.737782],
@@ -365,6 +397,9 @@ var chinaCoordMap = {
     '青岛': [120.4651,36.3373],
     '韶关': [113.7964,24.7028]
 };
+
+var coordMap = JSON.parse((JSON.stringify(chinaCoordMap) + JSON.stringify(wfdCoordMap)).replace(/}{/, ','));
+// console.log(coordMap)
 
 var chinaMapData = [{
     name:"北京",
