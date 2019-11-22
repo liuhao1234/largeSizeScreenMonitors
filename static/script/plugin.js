@@ -92,7 +92,7 @@
                 mapCenter:["50%","50%"],
                 mapSize:"100%",
                 labelFormatter:function(params){
-                    return params.name+"("+params.value[2]+")"
+                    return params.name+"("+params.value[2]+"吨)"
                 },
                 data : '',
                 coordMap:'',
