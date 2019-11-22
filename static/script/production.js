@@ -35,7 +35,7 @@ $(function(){
         },
         data:opulationRatioData
     })
-
+    
     $(".product-panel").click(function(ev){
         $(".product-detail-content").fadeIn();
         // console.log(ev)
@@ -70,14 +70,14 @@ $(function(){
         $(".product-detail-content").fadeOut();
     })
 })
-
+var carousel = true;
 function showDetail(){
     $.initBarChart({
         domId:"productYieldChart",
         data:yieldData,
         colorType:"blue",
         barWidth:10,
-        carousel:true,
+        carousel:carousel,
         chartDirection:"horizontal",
         valueAxisName:"单位:吨"
     })
@@ -86,7 +86,7 @@ function showDetail(){
         domId:"salesRankChart",
         data:yieldData,
         barWidth:10,
-        carousel:true,
+        carousel:carousel,
         chartDirection:"horizontal",
         valueAxisName:"单位:元"
     })
@@ -95,7 +95,7 @@ function showDetail(){
         domId:"salesRankCityChart",
         data:yieldData,
         barWidth:16,
-        carousel:true,
+        carousel:carousel,
         colorType:"blue",
         grid:[30,20,40,50],
         valueAxisName:"单位:元"
@@ -103,7 +103,7 @@ function showDetail(){
 
     $.initLineChart({
         domId:"salesTrendChart",
-        carousel:true,
+        carousel:carousel,
         data:salesTrendData,
     })
     var index = 0;
@@ -142,4 +142,5 @@ function showDetail(){
         data : pathData01,
         coordMap:coordMap
     })
+    carousel = false;
 }
