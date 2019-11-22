@@ -637,7 +637,7 @@ html,body{
     height: 100%;
 }
 .government-content .item-wrap01 ul{
-    margin: 0 50px;
+    margin: 0 10px;
     margin-top: 10px;
 }
 .government-content .item-wrap01 ul li{
@@ -646,6 +646,11 @@ html,body{
     text-align: center;
     color: #9bdef0;
     font-size: 14px;
+}
+.government-content .item-wrap01 ul li b{
+    font-size: 16px;
+    color: #00ffff;
+    padding: 0 5px;
 }
 .government-content .item-wrap02{
     margin-top: 5px;
