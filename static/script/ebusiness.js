@@ -59,6 +59,7 @@ $(function(){
         domId:"cityRankChart",
         carousel:true,
         carouselSpeed:3000,
+        valueAxisName:"单位:亿元",
         colorType:"blue",
         barWidth:10,
         labelShow:false,
