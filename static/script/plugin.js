@@ -36,7 +36,8 @@
                 })
                 return result;
             }
-
+            console.log(legendData)
+            console.log(seriseData)
             var option = {
                     legend: {
                         show:opts.lengendShow,
@@ -1009,7 +1010,7 @@
                     data: $.convertDataForPath(item[1],geoCoordMap)
                 },
                 {
-                    name: item[0] + ' Top10',
+                    name: item[0],
                     type: 'lines',
                     zlevel: 2,
                     symbol: ['none', 'arrow'],
@@ -1032,7 +1033,7 @@
                     data: $.convertDataForPath(item[1],geoCoordMap)
                 },
                 {
-                    name: item[0] + ' Top10',
+                    name: item[0],
                     type: 'effectScatter',
                     coordinateSystem: 'geo',
                     zlevel: 2,
