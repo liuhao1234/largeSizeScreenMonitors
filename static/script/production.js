@@ -30,6 +30,9 @@ $(function(){
         domId:"opulationRatio",
         labelShow:true,
         radius:['45%', '65%'],
+        lableFormatter:function(params){
+            return params.name+":"+params.percent+"%"+"\n销量:"+Number(params.value).toLocaleString()+"吨"
+        },
         data:opulationRatioData
     })
 
