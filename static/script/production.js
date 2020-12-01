@@ -31,7 +31,7 @@ $(function(){
         labelShow:true,
         radius:['45%', '65%'],
         lableFormatter:function(params){
-            return params.name+":"+params.percent+"%"+"\n销量:"+Number(params.value).toLocaleString()+"吨"
+            return params.name+":"+params.percent+"%"+"\n销量:"+Number(params.value).toLocaleString()+"万吨"
         },
         data:opulationRatioData
     })
@@ -87,7 +87,7 @@ $(function(){
                             '<div class="list-data">'+
                                 '<div class="list-data-inner">'+
                                     '<span>'+value.name+'</span>'+
-                                    '<b>'+value.value+'<small>吨</small></b>'+
+                                    '<b>'+value.value+'<small>万吨</small></b>'+
                                 '</div>'+
                             '</div>'+
                         '</div>'
