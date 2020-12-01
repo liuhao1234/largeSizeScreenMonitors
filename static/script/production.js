@@ -69,6 +69,30 @@ $(function(){
     $(".close_detail").click(function(){
         $(".product-detail-content").fadeOut();
     })
+
+    var $productSalesList = $("#productSalesList")
+    var saleListStr = ""
+    $.each(opulationRatioData,function(index,value){
+        saleListStr +=  '<div class="item-cell border-type02">'+
+                            '<div class="item-border">'+
+                                '<i></i>'+
+                                '<i></i>'+
+                                '<i></i>'+
+                                '<i></i>'+
+                                '<i></i>'+
+                                '<i></i>'+
+                                '<i></i>'+
+                                '<i></i>'+
+                            '</div>'+
+                            '<div class="list-data">'+
+                                '<div class="list-data-inner">'+
+                                    '<span>'+value.name+'</span>'+
+                                    '<b>'+value.value+'<small>吨</small></b>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'
+    })
+    $productSalesList.append(saleListStr)
 })
 var carousel = true;
 function showDetail(){

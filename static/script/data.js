@@ -527,16 +527,16 @@ var sellIncreaseLineData = [{
 
 var opulationRatioData = [{
     name:"苹果",
-    value:938
+    value:77
 },{
     name:"地瓜",
-    value:969
+    value:33
 },{
     name:"樱桃",
-    value:599
+    value:6
 },{
     name:"葡萄",
-    value:432
+    value:3
 }]
 
 var yieldData = [{
