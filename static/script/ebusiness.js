@@ -72,7 +72,7 @@ function initSellRankList(data){
     var $list = $("#sellRank").find("ul");
     var str = "";
     $.each(data,function(index,value){
-        str += "<li><i>"+(index+1)+"</i><span>"+value.name+"</span><b>"+value.value+"</b></li>"
+        str += "<li><i>"+(index+1)+"</i><span>"+value.name+"</span><b>"+$.thousandSeparator(value.value)+"</b></li>"
     })
     $list.append(str);
 }

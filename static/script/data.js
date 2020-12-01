@@ -94,92 +94,92 @@ var sellRankList = [{
         value:45323
     },{
         name:"宣威市老倌土特产",
-        value:45323
+        value:5323
     },{
         name:"云宣稻香园旗舰店",
-        value:45323
+        value:15323
     },{
         name:"杨宣宣威火腿店",
-        value:45323
+        value:4323
     },{
         name:"可渡村",
-        value:45323
+        value:1323
     },{
         name:"宣威市老有为云南土特",
-        value:45323
+        value:7323
     },{
         name:"随心所逸 土特产",
-        value:45323
+        value:5323
     },{
         name:"宣威升达火腿",
-        value:45323
+        value:6323
     },{
         name:"优农宣威",
-        value:45323
+        value:145323
     },{
         name:"宣威阳光食品",
-        value:45323
+        value:15323
     },{
         name:"简酥旗舰店",
-        value:45323
+        value:323
     },{
         name:"老浦家食品旗舰店",
-        value:45323
+        value:9323
     },{
         name:"秀滇食品专营店",
-        value:45323
+        value:98323
     },{
         name:"七彩云南味",
         value:45323
     },{
         name:"杨宣宣威火腿店",
-        value:45323
+        value:28323
     },{
         name:"可渡村",
-        value:45323
+        value:8453
     },{
         name:"宣威市老有为云南土特",
-        value:45323
+        value:6545
     },{
         name:"随心所逸 土特产",
-        value:45323
+        value:9648
     },{
         name:"宣威升达火腿",
-        value:45323
+        value:4892
     },{
         name:"优农宣威",
-        value:45323
+        value:5102
     },{
         name:"宣威阳光食品",
-        value:45323
+        value:12903
     },{
         name:"简酥旗舰店",
-        value:45323
+        value:23917
     }]
 var learnRanklineChartData = [{
         name:"复州城镇",
-        value:350
+        value:4.5
     },{
         name:"松树镇",
-        value:234
+        value:4
     },{
         name:"得利寺镇",
-        value:191
+        value:3
     },{
         name:"万家岭镇",
-        value:180
+        value:2
     },{
         name:"许屯镇",
-        value:166
+        value:2
     },{
         name:"永宁镇",
-        value:150
+        value:1.5
     },{
         name:"谢屯镇",
-        value:140
+        value:1.2
     },{
         name:"老虎屯镇",
-        value:130
+        value:0.8
     }]
 var pointData = [
     { name: '复州城镇', value: 200 },
@@ -448,24 +448,24 @@ var chinaMapData = [{
 
 var gdpPieData = [{
     name:"淘宝",
-    value:43
+    value:10
 },{
     name:"京东",
-    value:96
+    value:6
 },{
     name:"苏宁",
-    value:71
+    value:3
 }]
 
 var gdpPieData02 = [{
     name:"火腿系列",
-    value:43
+    value:6
 },{
     name:"水果系列",
-    value:96
+    value:9
 },{
     name:"农产品系列",
-    value:71
+    value:4
 }]
 
 var gdpPieData03 = [{
@@ -481,25 +481,25 @@ var gdpPieData03 = [{
 
 var gdpLineData = [{
     name:"2013",
-    value:1280
+    value:16
 },{
     name:"2014",
-    value:966
+    value:20
 },{
     name:"2015",
-    value:2890
+    value:22
 },{
     name:"2016",
-    value:1692.85
+    value:14
 },{
     name:"2017",
-    value:2789.88
+    value:18
 },{
     name:"2018",
-    value:1660.55
+    value:16
 },{
     name:"2019",
-    value:3211.11
+    value:20
 }]
 
 var sellIncreaseLineData = [{

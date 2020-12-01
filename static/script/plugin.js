@@ -1164,6 +1164,14 @@
                     $(this).find(bars).stop().fadeTo('fast', 0);
                 }
             );	
+        },
+
+        thousandSeparator:function(number){
+            var isLegal = (typeof number === "string" || typeof number === "number")&&(!isNaN(number))
+            if(isLegal){
+                return Number(number).toLocaleString("zh-cn")
+            }
+            return "非数值型无法添加千位符"    
         }
     })
 })(jQuery)
